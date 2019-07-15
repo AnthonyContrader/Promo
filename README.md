@@ -1,2 +1,2 @@
-# Promo
-Promo project
+# SAMPLE
+Sample Projects
