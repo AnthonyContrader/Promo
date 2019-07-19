@@ -6,7 +6,6 @@ import it.contrader.view.AbstractView;
 
 public class UserDeleteView extends AbstractView {
 	private Request request;
-
 	private int id;
 	private final String mode = "DELETE";
 

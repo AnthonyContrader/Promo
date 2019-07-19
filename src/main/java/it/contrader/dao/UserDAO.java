@@ -51,7 +51,7 @@ public class UserDAO implements DAO<User> {
 
 	public boolean insert(User userToInsert) {
 		Connection connection = ConnectionSingleton.getInstance();
-		System.out.print("Sei qua");
+		
 		try {	
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
 			preparedStatement.setString(1, userToInsert.getUsername());
@@ -70,8 +70,6 @@ public class UserDAO implements DAO<User> {
 	public User read(int userId) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
-
-
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_READ);
 			preparedStatement.setInt(1, userId);
 			ResultSet resultSet = preparedStatement.executeQuery();
