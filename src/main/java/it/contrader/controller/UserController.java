@@ -50,6 +50,8 @@ public class UserController implements Controller {
 		String username;
 		String password;
 		String usertype;
+		int barcode;
+		String scode;
 
 		switch (mode) {
 		
@@ -63,14 +65,23 @@ public class UserController implements Controller {
 		
 		// Arriva qui dalla UserInsertView. Estrae i parametri da inserire e chiama il service per inserire uno user con questi parametri
 		case "INSERT":
-			username = request.get("username").toString();
-			password = request.get("password").toString();
-			usertype = request.get("usertype").toString();
 			
-			//costruisce l'oggetto user da inserire
-			UserDTO usertoinsert = new UserDTO(username, password, usertype);
+			username = request.get("username").toString();
+			System.out.print(username);
+			password = request.get("password").toString();
+			
+			usertype = request.get("usertype").toString();
+			scode = request.get("scode").toString();
+			System.out.print(scode);
+			barcode= Integer.parseInt(request.get("barcode").toString());
+			System.out.print(barcode);
+						
+			
+			UserDTO usertoinsert = new UserDTO(username, password, usertype, barcode, scode);
 			//invoca il service
-			userService.insert(usertoinsert);
+			
+			boolean n = userService.insert(usertoinsert);
+			
 			request = new Request();
 			request.put("mode", "mode");
 			//Rimanda alla view con la risposta
@@ -93,7 +104,9 @@ public class UserController implements Controller {
 			username = request.get("username").toString();
 			password = request.get("password").toString();
 			usertype = request.get("usertype").toString();
-			UserDTO usertoupdate = new UserDTO(username, password, usertype);
+			scode = request.get("scode").toString();
+			barcode= Integer.parseInt(request.get("barcode").toString());
+			UserDTO usertoupdate = new UserDTO(username, password, usertype, barcode, scode);
 			usertoupdate.setId(id);
 			userService.update(usertoupdate);
 			request = new Request();

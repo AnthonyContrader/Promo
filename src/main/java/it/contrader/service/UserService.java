@@ -21,5 +21,10 @@ public class UserService extends AbstractService<User, UserDTO> {
 		this.converter = new UserConverter();
 	}
 	
+	public boolean insert(UserDTO dto) {
+		System.out.print("sei qua");
+		return dao.insert(converter.toEntity(dto));
+	}
+	
 
 }

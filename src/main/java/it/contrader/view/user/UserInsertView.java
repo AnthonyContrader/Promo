@@ -10,6 +10,8 @@ public class UserInsertView extends AbstractView{
 	private String username;
 	private String password;
 	private String usertype;
+	private int barcode;
+	private String scode;
 	private final String mode = "INSERT";
 
 	public UserInsertView() {
@@ -21,10 +23,10 @@ public class UserInsertView extends AbstractView{
 	 */
 	@Override
 	public void showResults(Request request) {
-		if (request!=null) {
-			System.out.println("Inserimento andato a buon fine.\n");
-			MainDispatcher.getInstance().callView("User", null);
-		}
+		//if (request!=null) {
+			//System.out.println("Inserimento andato a buon fine.\n");
+			//MainDispatcher.getInstance().callView("User", null);
+		//}
 	}
 
 	/**
@@ -38,6 +40,10 @@ public class UserInsertView extends AbstractView{
 			password = getInput();
 			System.out.println("Inserisci tipo dell'utente:");
 			usertype = getInput();
+			System.out.println("Inserisci barcode dell'utente:");
+			password = getInput();
+			System.out.println("Inserisci Scode dell'utente:");
+			usertype = getInput();
 	}
 
 	/**
@@ -49,6 +55,8 @@ public class UserInsertView extends AbstractView{
 		request.put("username", username);
 		request.put("password", password);
 		request.put("usertype", usertype);
+		request.put("barcode", barcode);
+		request.put("scode", scode);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("User", "doControl", request);
 	}

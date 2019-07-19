@@ -29,14 +29,15 @@ public class HomeController implements Controller {
 			// Reindirizza alla giusta view in base allo usertype
 			switch(usertype) {
 			
-			case "ADMIN":
+			case "admin":
 				MainDispatcher.getInstance().callView("HomeAdmin", request);
+				//RICHIAMA HOMEADMIN IN VIEW (FARLO ANCHE PER MODERATORE)
 				break;
 				
-			case "USER": 
+			case "user": 
 				MainDispatcher.getInstance().callView("HomeUser", request);
 				break;
-			
+			//METTERE MODERATORE 
 			default:
 				 MainDispatcher.getInstance().callView("Login", null);
 				 break;

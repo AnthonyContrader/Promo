@@ -15,9 +15,9 @@ import it.contrader.model.User;
 public class UserDAO implements DAO<User> {
 
 	private final String QUERY_ALL = "SELECT * FROM user";
-	private final String QUERY_CREATE = "INSERT INTO user (username, password, usertype) VALUES (?,?,?)";
+	private final String QUERY_CREATE = "INSERT INTO user (username, password, usertype, barcode, scode) VALUES (?,?,?,?,?)";
 	private final String QUERY_READ = "SELECT * FROM user WHERE id=?";
-	private final String QUERY_UPDATE = "UPDATE user SET username=?, password=?, usertype=? WHERE id=?";
+	private final String QUERY_UPDATE = "UPDATE user SET username=?, password=?, usertype=?, barcode=?, scode=?  WHERE id=?";
 	private final String QUERY_DELETE = "DELETE FROM user WHERE id=?";
 
 	public UserDAO() {
@@ -36,7 +36,10 @@ public class UserDAO implements DAO<User> {
 				String username = resultSet.getString("username");
 				String password = resultSet.getString("password");
 				String usertype = resultSet.getString("usertype");
-				user = new User(username, password, usertype);
+				String scode = resultSet.getString("scode");				
+				int barcode=Integer.parseInt(resultSet.getString("barcode"));
+				
+				user = new User(username, password, usertype, barcode, scode);
 				user.setId(id);
 				usersList.add(user);
 			}
@@ -48,11 +51,14 @@ public class UserDAO implements DAO<User> {
 
 	public boolean insert(User userToInsert) {
 		Connection connection = ConnectionSingleton.getInstance();
+		System.out.print("Sei qua");
 		try {	
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
 			preparedStatement.setString(1, userToInsert.getUsername());
 			preparedStatement.setString(2, userToInsert.getPassword());
 			preparedStatement.setString(3, userToInsert.getUsertype());
+			preparedStatement.setString(5, userToInsert.getScode());
+			preparedStatement.setInt(4, userToInsert.getBarcode());
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {
@@ -70,12 +76,16 @@ public class UserDAO implements DAO<User> {
 			preparedStatement.setInt(1, userId);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
-			String username, password, usertype;
-
-			username = resultSet.getString("username");
+			String username, password, usertype,scode;
+            int barcode;
+			
+            username = resultSet.getString("username");
 			password = resultSet.getString("password");
 			usertype = resultSet.getString("usertype");
-			User user = new User(username, password, usertype);
+			scode=resultSet.getString("scode");
+			barcode=Integer.parseInt(resultSet.getString("barcode"));
+			
+			User user = new User(username, password, usertype, barcode, scode);
 			user.setId(resultSet.getInt("id"));
 
 			return user;
@@ -89,9 +99,8 @@ public class UserDAO implements DAO<User> {
 		Connection connection = ConnectionSingleton.getInstance();
 
 		// Check if id is present
-		if (userToUpdate.getId() == 0)
-			return false;
-
+		/*if (userToUpdate.getId() == 0)
+			return false;*/
 		User userRead = read(userToUpdate.getId());
 		if (!userRead.equals(userToUpdate)) {
 			try {
@@ -107,13 +116,19 @@ public class UserDAO implements DAO<User> {
 				if (userToUpdate.getUsertype() == null || userToUpdate.getUsertype().equals("")) {
 					userToUpdate.setUsertype(userRead.getUsertype());
 				}
+				
+				if (userToUpdate.getScode() == null || userToUpdate.getScode().equals("")) {
+					userToUpdate.setScode(userRead.getScode());
+				}
 
 				// Update the user
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 				preparedStatement.setString(1, userToUpdate.getUsername());
 				preparedStatement.setString(2, userToUpdate.getPassword());
 				preparedStatement.setString(3, userToUpdate.getUsertype());
-				preparedStatement.setInt(4, userToUpdate.getId());
+				preparedStatement.setInt(4, userToUpdate.getBarcode());
+				preparedStatement.setString(5, userToUpdate.getScode());
+				preparedStatement.setInt(6, userToUpdate.getId());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)
 					return true;

@@ -15,6 +15,12 @@ public class User {
 	
 	private String usertype;
 
+    private int barcode;
+	
+	private String scode;
+	
+	
+
 	/**
 	 * Definisco i due costruttori, uno vuoto e uno con tre parametri per costrire oggetti di tipo User
 	 */
@@ -22,17 +28,21 @@ public class User {
 		
 	}
 
-	public User (String username, String password, String usertype) {
+	public User (String username, String password, String usertype, int barcode, String scode) {
 		this.username = username;
 		this.password = password;
 		this.usertype = usertype;
+		this.barcode=barcode;
+		this.scode=scode;
 	}
 
-	public User (int id, String username, String password, String usertype) {
+	public User (int id, String username, String password, String usertype, int barcode, String scode) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.usertype = usertype;
+		this.barcode=barcode;
+		this.scode=scode;
 	}
 
 	/**
@@ -70,6 +80,22 @@ public class User {
 		return username;
 	}
 
+	public int getBarcode() {
+		return this.barcode;
+	}
+
+	public void setBarcode(int barcode) {
+		this.barcode = barcode;
+	}
+
+	public void setScode(String scode) {
+		this.scode = scode;
+	}
+
+	public String getScode() {
+		return scode;
+	}
+	
 	//Trasforma un oggetto in una stringa
 	@Override
 	public String toString() {
@@ -104,5 +130,12 @@ public class User {
 		} else if (!usertype.equals(other.usertype))
 			return false;
 		return true;
+		
+		/*if (scode == null) {
+			if (other.scode != null)
+				return false;
+		} else if (!scode.equals(other.scode))
+			return false;
+		return true;*/
 	}
 }

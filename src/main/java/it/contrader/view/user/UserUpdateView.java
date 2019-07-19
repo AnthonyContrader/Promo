@@ -13,6 +13,8 @@ public class UserUpdateView extends AbstractView {
 	private String username;
 	private String password;
 	private String usertype;
+	private int barcode;
+	private String scode;
 	private final String mode = "UPDATE";
 
 	public UserUpdateView() {
@@ -60,6 +62,8 @@ public class UserUpdateView extends AbstractView {
 		request.put("username", username);
 		request.put("password", password);
 		request.put("usertype", usertype);
+		request.put("barcode", barcode);
+		request.put("scode", scode);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("User", "doControl", request);
 	}
