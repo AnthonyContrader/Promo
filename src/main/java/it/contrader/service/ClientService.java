@@ -1,7 +1,9 @@
 package it.contrader.service;
 
-import it.contrader.dto.UserDTO;
-import it.contrader.model.User;
+import com.mysql.cj.xdevapi.Client;
+
+import it.contrader.dto.ClientDTO;
+
 
 public class ClientService extends AbstractService<Client, ClientDTO>{
 public ClientService() {
@@ -10,7 +12,7 @@ public ClientService() {
 }
 
 public boolean insert(ClientDTO dto) {
-	Client.out.print("sei qua");
+	System.out.print("sei qua");
 	return dao.insert(converter.toEntity(dto));
 }
 }
