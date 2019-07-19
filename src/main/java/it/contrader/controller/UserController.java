@@ -69,8 +69,9 @@ public class UserController implements Controller {
 			username = request.get("username").toString();
 			System.out.print(username);
 			password = request.get("password").toString();
-			
+			System.out.print(password);
 			usertype = request.get("usertype").toString();
+			System.out.print(usertype);
 			scode = request.get("scode").toString();
 			System.out.print(scode);
 			barcode= Integer.parseInt(request.get("barcode").toString());

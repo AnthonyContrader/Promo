@@ -1,9 +1,9 @@
 package it.contrader.service;
 
 import com.mysql.cj.xdevapi.Client;
-
 import it.contrader.dto.ClientDTO;
-
+import it.contrader.converter.ClientConverter;
+import it.contrader.dao.ClientDAO;
 
 public class ClientService extends AbstractService<Client, ClientDTO>{
 public ClientService() {
