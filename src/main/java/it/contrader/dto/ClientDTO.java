@@ -8,12 +8,7 @@ public class ClientDTO {
 	private String email;
 	private String scode;
 	
-	public  ClientDTO(String username, String password, String email, String scode) {
-		this.username=username;
-		this.password=password;
-		this.email=email;
-		this.scode=scode;
-	}
+	public  ClientDTO() {	}
 	
 	public  ClientDTO(int idAdmin, String username, String password, String email, String scode) {
 		this.idAdmin=idAdmin;
