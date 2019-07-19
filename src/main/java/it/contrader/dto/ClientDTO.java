@@ -16,7 +16,7 @@ public class ClientDTO {
 	}
 	
 	public  ClientDTO(int idAdmin, String username, String password, String email, String scode) {
-		this.id=idAdmin;
+		this.idAdmin=idAdmin;
 		this.username=username;
 		this.password=password;
 		this.email=email;
@@ -73,7 +73,7 @@ public class ClientDTO {
 	
 	@Override
 	public String toString() {
-		return "Client [idClient=" + idClient + ", idAdmin=" + idAdmin + ", username=" + username + ", password="
+		return "Client [idClient=" + id + ", idAdmin=" + idAdmin + ", username=" + username + ", password="
 				+ password + ", email=" + email + "]";
 	}
 }
