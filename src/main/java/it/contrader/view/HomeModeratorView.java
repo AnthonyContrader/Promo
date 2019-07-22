@@ -44,12 +44,10 @@ public class HomeModeratorView extends AbstractView {
         	this.request.put("mode", "CLIENTLIST");
         	MainDispatcher.getInstance().callAction("Client", "doControl", request);
         	break;
- 
         case "e":
         	MainDispatcher.getInstance().callAction("Login", "doControl", null);
         	break;
         default:
-        	
             request.put("choice", choice);
         	MainDispatcher.getInstance().callAction("Login", "doControl", request);
         }

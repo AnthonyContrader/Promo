@@ -31,13 +31,12 @@ public class HomeController implements Controller {
 			
 			case "admin":
 				MainDispatcher.getInstance().callView("HomeAdmin", request);
-				//RICHIAMA HOMEADMIN IN VIEW (FARLO ANCHE PER MODERATORE)
 				break;
 			case "moderator": 
 				MainDispatcher.getInstance().callView("HomeModerator", request);
 				break;
-			case "user": 
-				MainDispatcher.getInstance().callView("HomeUser", request);
+			case "client": 
+				MainDispatcher.getInstance().callView("HomeClient", request);
 				break;
 			//METTERE MODERATORE 
 			default:

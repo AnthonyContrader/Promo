@@ -48,8 +48,9 @@ public class ClientController implements Controller {
 		int idAdmin;
 		String username;
 		String password;
-		String email;
 		String scode;
+		String email;
+		
 
 		switch (mode) {
 		
@@ -77,7 +78,7 @@ public class ClientController implements Controller {
 			
 									
 			
-			ClientDTO clienttoinsert = new ClientDTO(idAdmin, username, password, email, scode);
+			ClientDTO clienttoinsert = new ClientDTO(idAdmin, username, password, scode, email);
 			//invoca il service
 			
 			boolean n = clientService.insert(clienttoinsert);
@@ -104,9 +105,9 @@ public class ClientController implements Controller {
 			idAdmin = Integer.parseInt(request.get("idadmin").toString());
 			username = request.get("username").toString();
 			password = request.get("password").toString();
-			email = request.get("email").toString();
 			scode = request.get("scode").toString();
-			ClientDTO clienttoupdate = new ClientDTO(idAdmin, username, password, email, scode);
+			email = request.get("email").toString();
+			ClientDTO clienttoupdate = new ClientDTO(idAdmin, username, password, scode, email);
 			clienttoupdate.setId(id);
 			clientService.update(clienttoupdate);
 			request = new Request();

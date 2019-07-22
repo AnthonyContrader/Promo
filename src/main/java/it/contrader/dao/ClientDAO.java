@@ -17,7 +17,7 @@ public class ClientDAO implements DAO<Client> {
 	private final String QUERY_ALL = "SELECT * FROM client";
 	private final String QUERY_CREATE = "INSERT INTO client (idadmin, username, password, scode, email) VALUES (?,?,?,?,?)";
 	private final String QUERY_READ = "SELECT * FROM client WHERE idclient=?";
-	private final String QUERY_UPDATE = "UPDATE client SET idadmin=?, username=?, password=?, email=?, scode=?  WHERE idclient=?";
+	private final String QUERY_UPDATE = "UPDATE client SET idadmin=?, username=?, password=?, scode=?, email=?  WHERE idclient=?";
 	private final String QUERY_DELETE = "DELETE FROM client WHERE idclient=?";
 
 	public ClientDAO() {
@@ -76,15 +76,16 @@ public class ClientDAO implements DAO<Client> {
 			resultSet.next();
 			String username, password, scode, email;
             int idadmin;
-			
+            idadmin= Integer.parseInt(resultSet.getString("idadmin"));
             username = resultSet.getString("username");
 			password = resultSet.getString("password");
 			scode = resultSet.getString("scode");
 			email= resultSet.getString("email");
-			idadmin= Integer.parseInt(resultSet.getString("idadmin"));
+			
 			
 			Client client = new Client(idadmin, username, password, scode, email);
-			client.setId(resultSet.getInt("idclient"));
+			client.setId( resultSet.getInt("idclient"));
+			client.setIdAdmin(resultSet.getInt("idadmin"));
 
 			return client;
 		} catch (SQLException e) {
@@ -103,7 +104,7 @@ public class ClientDAO implements DAO<Client> {
 		if (!clientRead.equals(clientToUpdate)) {
 			try {
 				// Fill the userToUpdate object
-				if (clientToUpdate.getIdAdmin() == 0) {
+				if (clientToUpdate.getIdAdmin() < 0) {
 					clientToUpdate.setIdAdmin(clientRead.getIdAdmin());
 				}
 				
@@ -130,6 +131,7 @@ public class ClientDAO implements DAO<Client> {
 				preparedStatement.setString(3, clientToUpdate.getPassword());
 				preparedStatement.setString(4, clientToUpdate.getScode());
 				preparedStatement.setString(5, clientToUpdate.getEmail());
+				preparedStatement.setInt(6, clientToUpdate.getId());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)
 					return true;

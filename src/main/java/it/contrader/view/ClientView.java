@@ -26,7 +26,7 @@ import it.contrader.main.MainDispatcher;
 		public void showResults(Request request) {
 			if (request != null) {
 				System.out.println("\n------------------- Gestione clienti ----------------\n");
-				System.out.println("ID\tUsername\tPassword\tTipo Utente");
+				System.out.println("ID\tIdAdmin\t\tUsername\tPassword\tscode\t\temail");
 				System.out.println("----------------------------------------------------\n");
 				
 				@SuppressWarnings("unchecked")

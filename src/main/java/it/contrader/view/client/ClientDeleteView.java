@@ -40,7 +40,7 @@ public class ClientDeleteView extends AbstractView {
 	@Override
 	public void submit() {
 		request = new Request();
-		request.put("id", id);
+		request.put("idclient", id);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Client", "doControl", request);
 	}

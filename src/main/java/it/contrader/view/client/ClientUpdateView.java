@@ -13,8 +13,9 @@ public class ClientUpdateView extends AbstractView {
 	private int idAdmin;
 	private String username;
 	private String password;
-	private String email;
 	private String scode;
+	private String email;
+	
 	private final String mode = "UPDATE";
 
 	public ClientUpdateView() {
@@ -28,7 +29,7 @@ public class ClientUpdateView extends AbstractView {
 	public void showResults(Request request) {
 		if (request!=null) {
 			System.out.println("Modifica andata a buon fine.\n");
-			MainDispatcher.getInstance().callView("HomeModerator", null);
+			MainDispatcher.getInstance().callView("Client", null);
 		}
 	}
 
@@ -38,14 +39,16 @@ public class ClientUpdateView extends AbstractView {
 	@Override
 	public void  showOptions() {
 		try {
-			System.out.println("Inserisci id del moderatore:");
-			idAdmin = Integer.parseInt(getInput());
 			System.out.println("Inserisci id dell'utente:");
 			idclient = Integer.parseInt(getInput());
+			System.out.println("Inserisci id del moderatore:");
+			idAdmin = Integer.parseInt(getInput());
 			System.out.println("Inserisci username dell'utente:");
 			username = getInput();
 			System.out.println("Inserisci password dell'utente:");
 			password = getInput();
+			System.out.println("Inserisci scode dell'utente:");
+			scode = getInput();
 			System.out.println("Inserisci l'email dell'utente:");
 			email = getInput();
 		} catch (Exception e) {
@@ -64,8 +67,9 @@ public class ClientUpdateView extends AbstractView {
 		request.put("idadmin", idAdmin);
 		request.put("username", username);
 		request.put("password", password);
-		request.put("email", email);
 		request.put("scode", scode);
+		request.put("email", email);
+		
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Client", "doControl", request);
 	}

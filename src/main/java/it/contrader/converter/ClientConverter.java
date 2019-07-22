@@ -28,7 +28,7 @@ public class ClientConverter  implements Converter<Client, ClientDTO> {
 		public Client toEntity(ClientDTO clientDTO) {
 			Client client = new Client(clientDTO.getId(),clientDTO.getIdAdmin(),clientDTO.getUsername(), clientDTO.getPassword(), clientDTO.getScode(),clientDTO.getEmail());
 			
-			if (clientDTO.getId()!=0)
+			if (clientDTO.getId() != 0)
 				client.setId(clientDTO.getId());
 			return client;
 			

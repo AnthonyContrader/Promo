@@ -52,12 +52,10 @@ public class HomeAdminView extends AbstractView {
         	this.request.put("mode", "USERLIST");
         	MainDispatcher.getInstance().callAction("User", "doControl", request);
         	break;
- 
         case "e":
         	MainDispatcher.getInstance().callAction("Login", "doControl", null);
         	break;
         default:
-        	
             request.put("choice", choice);
         	MainDispatcher.getInstance().callAction("Login", "doControl", request);
         }

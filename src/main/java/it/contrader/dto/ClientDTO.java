@@ -27,48 +27,55 @@ public class ClientDTO {
 		this.scode=scode;
 	}
 	
-	public String getScode() {
-		return scode;
+
+	public int getId() {
+		return this.id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public int getIdAdmin() {
+		return this.idAdmin;
+	}
+	public void setIdAdmin(int idAdmin) {
+		this.idAdmin = idAdmin;
+	}
+
+	public String getUsername() {
+		return this.username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public void setScode(String scode) {
 		this.scode = scode;
 	}
 
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public int getIdAdmin() {
-		return idAdmin;
-	}
-	public void setIdAdmin(int idAdmin) {
-		this.idAdmin = idAdmin;
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
+	public String getScode() {
+		return scode;
 	}
 	
 	@Override
 	public String toString() {
-		return "Client [idClient=" + id + ", idAdmin=" + idAdmin + ", username=" + username + ", password="
-				+ password + ", email=" + email + "]";
+		return id + "\t " + idAdmin + "\t\t " +  username + "\t\t " +  password + "\t\t " + email + "\t\t "+ scode;
 	}
 }

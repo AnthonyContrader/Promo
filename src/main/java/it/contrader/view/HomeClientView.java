@@ -13,8 +13,8 @@ import it.contrader.controller.Request;
 
 			public void showOptions() {
 				System.out.println("-------------MENU------------\n");
-				System.out.println("NESSUNA OPZIONE DISPONIBILE!");
-				System.out.println("\n Esatto, puoi solo uscire...");
+				System.out.println("\n Visita la nostra pagina web \n");
+				
 				choice = this.getInput();
 
 			}
