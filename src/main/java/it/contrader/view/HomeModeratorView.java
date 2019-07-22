@@ -40,7 +40,7 @@ public class HomeModeratorView extends AbstractView {
     	//crea una nuova Request (vedi classe Request)
     	request = new Request();
         switch (choice) {
-        case "u":
+        case "c":
         	this.request.put("mode", "CLIENTLIST");
         	MainDispatcher.getInstance().callAction("Client", "doControl", request);
         	break;

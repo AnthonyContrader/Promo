@@ -16,9 +16,9 @@ public class ClientDAO implements DAO<Client> {
 
 	private final String QUERY_ALL = "SELECT * FROM client";
 	private final String QUERY_CREATE = "INSERT INTO client (idadmin, username, password, scode, email) VALUES (?,?,?,?,?)";
-	private final String QUERY_READ = "SELECT * FROM client WHERE id=?";
-	private final String QUERY_UPDATE = "UPDATE client SET idadmin=?, username=?, password=?, usertype=?, barcode=?, scode=?  WHERE id=?";
-	private final String QUERY_DELETE = "DELETE FROM client WHERE id=?";
+	private final String QUERY_READ = "SELECT * FROM client WHERE idclient=?";
+	private final String QUERY_UPDATE = "UPDATE client SET idadmin=?, username=?, password=?, email=?, scode=?  WHERE idclient=?";
+	private final String QUERY_DELETE = "DELETE FROM client WHERE idclient=?";
 
 	public ClientDAO() {
 
@@ -84,7 +84,7 @@ public class ClientDAO implements DAO<Client> {
 			idadmin= Integer.parseInt(resultSet.getString("idadmin"));
 			
 			Client client = new Client(idadmin, username, password, scode, email);
-			client.setId(resultSet.getInt("id"));
+			client.setId(resultSet.getInt("idclient"));
 
 			return client;
 		} catch (SQLException e) {
@@ -96,9 +96,9 @@ public class ClientDAO implements DAO<Client> {
 	public boolean update(Client clientToUpdate) {
 		Connection connection = ConnectionSingleton.getInstance();
 
-		// Check if id is present
-		/*if (userToUpdate.getId() == 0)
-			return false;*/
+		// Check if idclient is present
+		if (clientToUpdate.getId() == 0)
+			return false;
 		Client clientRead = read(clientToUpdate.getId());
 		if (!clientRead.equals(clientToUpdate)) {
 			try {

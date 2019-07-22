@@ -96,9 +96,8 @@ public class UserDAO implements DAO<User> {
 	public boolean update(User userToUpdate) {
 		Connection connection = ConnectionSingleton.getInstance();
 
-		// Check if id is present
-		/*if (userToUpdate.getId() == 0)
-			return false;*/
+		if (userToUpdate.getId() == 0)
+			return false;
 		User userRead = read(userToUpdate.getId());
 		if (!userRead.equals(userToUpdate)) {
 			try {

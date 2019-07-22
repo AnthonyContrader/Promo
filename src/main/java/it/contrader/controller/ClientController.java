@@ -1,5 +1,4 @@
 package it.contrader.controller;
-
 import java.util.List;
 import it.contrader.dto.ClientDTO;
 import it.contrader.main.MainDispatcher;
@@ -59,22 +58,23 @@ public class ClientController implements Controller {
 			id = Integer.parseInt(request.get("id").toString());
 			ClientDTO clientDTO = clientService.read(id);
 			request.put("client", clientDTO);
-			MainDispatcher.getInstance().callView(sub_package + "clientRead", request);
+			MainDispatcher.getInstance().callView(sub_package + "ClientRead", request);
 			break;
 		
 		// Arriva qui dalla clientInsertView. Estrae i parametri da inserire e chiama il service per inserire uno client con questi parametri
 		case "INSERT":
 			
-			idAdmin= Integer.parseInt(request.get("idAdmin").toString());
+			idAdmin= Integer.parseInt(request.get("idadmin").toString());
 			System.out.print(idAdmin);
 			username = request.get("username").toString();
 			System.out.print(username);
 			password = request.get("password").toString();
 			System.out.print(password);
-			email = request.get("email").toString();
-			System.out.print(email);
 			scode = request.get("scode").toString();
 			System.out.print(scode);
+			email = request.get("email").toString();
+			System.out.print(email);
+			
 									
 			
 			ClientDTO clienttoinsert = new ClientDTO(idAdmin, username, password, email, scode);
@@ -85,7 +85,7 @@ public class ClientController implements Controller {
 			request = new Request();
 			request.put("mode", "mode");
 			//Rimanda alla view con la risposta
-			MainDispatcher.getInstance().callView(sub_package + "clientInsert", request);
+			MainDispatcher.getInstance().callView(sub_package + "ClientInsert", request);
 			break;
 		
 		// Arriva qui dalla clientDeleteView. Estrae l'id dell'utente da cancellare e lo passa al Service
@@ -95,7 +95,7 @@ public class ClientController implements Controller {
 			clientService.delete(id);
 			request = new Request();
 			request.put("mode", "mode");
-			MainDispatcher.getInstance().callView(sub_package + "clientDelete", request);
+			MainDispatcher.getInstance().callView(sub_package + "ClientDelete", request);
 			break;
 		
 		// Arriva qui dalla clientUpdateView
@@ -111,7 +111,7 @@ public class ClientController implements Controller {
 			clientService.update(clienttoupdate);
 			request = new Request();
 			request.put("mode", "mode");
-			MainDispatcher.getInstance().callView(sub_package + "clientUpdate", request);
+			MainDispatcher.getInstance().callView(sub_package + "ClientUpdate", request);
 			break;
 			
 		//Arriva qui dalla clientView Invoca il Service e invia alla clientView il risultato da mostrare 
@@ -119,7 +119,7 @@ public class ClientController implements Controller {
 			List<ClientDTO> clientsDTO = clientService.getAll();
 			//Impacchetta la request con la lista degli client
 			request.put("clients", clientsDTO);
-			MainDispatcher.getInstance().callView("client", request);
+			MainDispatcher.getInstance().callView("Client", request);
 			break;
 			
 		//Esegue uno switch sulla base del comando inserito dall'utente e reindirizza tramite il Dispatcher alla View specifica per ogni operazione
@@ -130,19 +130,19 @@ public class ClientController implements Controller {
 			switch (choice.toUpperCase()) {
 			
 			case "L":
-				MainDispatcher.getInstance().callView(sub_package + "clientRead", null);
+				MainDispatcher.getInstance().callView(sub_package + "ClientRead", null);
 				break;
 				
 			case "I":
-				MainDispatcher.getInstance().callView(sub_package + "clientInsert", null);
+				MainDispatcher.getInstance().callView(sub_package + "ClientInsert", null);
 				break;
 				
 			case "M":
-				MainDispatcher.getInstance().callView(sub_package + "clientUpdate", null);
+				MainDispatcher.getInstance().callView(sub_package + "ClientUpdate", null);
 				break;
 				
 			case "C":
-				MainDispatcher.getInstance().callView(sub_package + "clientDelete", null);
+				MainDispatcher.getInstance().callView(sub_package + "ClientDelete", null);
 				break;
 				
 			case "E":

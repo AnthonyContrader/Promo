@@ -22,7 +22,7 @@ public class UserService extends AbstractService<User, UserDTO> {
 	}
 	
 	public boolean insert(UserDTO dto) {
-		System.out.print("sei qua");
+		//System.out.print("sei qua");
 		return dao.insert(converter.toEntity(dto));
 	}
 	

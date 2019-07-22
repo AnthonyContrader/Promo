@@ -6,7 +6,7 @@ import it.contrader.view.AbstractView;
 
 public class ClientInsertView extends AbstractView{
 	private Request request;
-
+	private int idAdmin;
 	private String username;
 	private String password;
 	private String email;
@@ -24,7 +24,7 @@ public class ClientInsertView extends AbstractView{
 	public void showResults(Request request) {
 		if (request!=null) {
 			System.out.println("Inserimento andato a buon fine.\n");
-			MainDispatcher.getInstance().callView("User", null);
+			MainDispatcher.getInstance().callView("Client", null);
 		}
 	}
 
@@ -33,14 +33,16 @@ public class ClientInsertView extends AbstractView{
 	 */
 	@Override
 	public void showOptions() {
+			System.out.println("Inserisci il idModeratore");
+		    idAdmin=Integer.parseInt(getInput());
 			System.out.println("Inserisci username dell'utente:");
 			username = getInput();
 			System.out.println("Inserisci password dell'utente:");
 			password = getInput();
+			System.out.println("Inserisci Scode dell'utente");
+			scode = getInput();
 			System.out.println("Inserisci email dell'utente:");
 			email = getInput();
-			System.out.println("Inserisci Scode dell'utente:");
-			scode = getInput();
 	}
 
 	/**
@@ -49,10 +51,11 @@ public class ClientInsertView extends AbstractView{
 	@Override
 	public void submit() {
 		request = new Request();
+		request.put("idadmin", idAdmin);
 		request.put("username", username);
 		request.put("password", password);
-		request.put("email", email);
 		request.put("scode", scode);
+		request.put("email", email);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Client", "doControl", request);
 	}
