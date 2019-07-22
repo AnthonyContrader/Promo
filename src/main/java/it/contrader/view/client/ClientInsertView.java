@@ -24,7 +24,7 @@ public class ClientInsertView extends AbstractView{
 	public void showResults(Request request) {
 		if (request!=null) {
 			System.out.println("Inserimento andato a buon fine.\n");
-			MainDispatcher.getInstance().callView("Client", null);
+			MainDispatcher.getInstance().callView("HomeModerator", null);
 		}
 	}
 

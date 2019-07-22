@@ -39,7 +39,7 @@ public class ClientDAO implements DAO<Client> {
 				String scode = resultSet.getString("scode");				
 				String email = resultSet.getString("email");
 				
-				client = new Client(idadmin, username, password, scode, email);
+				client = new Client(idclient,idadmin, username, password, scode, email);
 				client.setId(idclient);
 				clientsList.add(client);
 			}

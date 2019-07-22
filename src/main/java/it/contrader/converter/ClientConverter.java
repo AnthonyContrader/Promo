@@ -15,8 +15,9 @@ public class ClientConverter  implements Converter<Client, ClientDTO> {
 		 */
 		@Override
 		public ClientDTO toDTO(Client client) {
-			ClientDTO clientDTO = new ClientDTO(client.getId(), client.getIdAdmin(), client.getUsername(), client.getPassword(), client.getEmail(), client.getScode());
+			ClientDTO clientDTO = new ClientDTO(client.getId(),client.getIdAdmin(), client.getUsername(), client.getPassword(), client.getScode(), client.getEmail());
 			return clientDTO;
+
 		}
 
 		/**
@@ -25,10 +26,12 @@ public class ClientConverter  implements Converter<Client, ClientDTO> {
 		 */
 		@Override
 		public Client toEntity(ClientDTO clientDTO) {
-			Client client = new Client(clientDTO.getIdAdmin(),clientDTO.getUsername(), clientDTO.getPassword(),clientDTO.getEmail(), clientDTO.getScode());
+			Client client = new Client(clientDTO.getId(),clientDTO.getIdAdmin(),clientDTO.getUsername(), clientDTO.getPassword(), clientDTO.getScode(),clientDTO.getEmail());
+			
 			if (clientDTO.getId()!=0)
 				client.setId(clientDTO.getId());
 			return client;
+			
 		}
 		
 		/**

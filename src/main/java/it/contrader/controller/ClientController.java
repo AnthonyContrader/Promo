@@ -55,7 +55,7 @@ public class ClientController implements Controller {
 		
 		// Arriva qui dalla clientReadView. Invoca il Service con il parametro id e invia alla clientReadView uno client da mostrare 
 		case "READ":
-			id = Integer.parseInt(request.get("id").toString());
+			id = Integer.parseInt(request.get("idclient").toString());
 			ClientDTO clientDTO = clientService.read(id);
 			request.put("client", clientDTO);
 			MainDispatcher.getInstance().callView(sub_package + "ClientRead", request);
@@ -90,7 +90,7 @@ public class ClientController implements Controller {
 		
 		// Arriva qui dalla clientDeleteView. Estrae l'id dell'utente da cancellare e lo passa al Service
 		case "DELETE":
-			id = Integer.parseInt(request.get("id").toString());
+			id = Integer.parseInt(request.get("idclient").toString());
 			//Qui chiama il service
 			clientService.delete(id);
 			request = new Request();
@@ -100,8 +100,8 @@ public class ClientController implements Controller {
 		
 		// Arriva qui dalla clientUpdateView
 		case "UPDATE":
-			id = Integer.parseInt(request.get("id").toString());
-			idAdmin = Integer.parseInt(request.get("idAdmin").toString());
+			id = Integer.parseInt(request.get("idclient").toString());
+			idAdmin = Integer.parseInt(request.get("idadmin").toString());
 			username = request.get("username").toString();
 			password = request.get("password").toString();
 			email = request.get("email").toString();

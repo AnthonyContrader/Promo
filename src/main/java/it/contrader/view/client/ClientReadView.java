@@ -55,7 +55,7 @@ public class ClientReadView extends AbstractView {
 		request = new Request();
 		request.put("idclient", id);
 		request.put("mode", mode);
-		MainDispatcher.getInstance().callAction("Client", "doControl", request);
+		MainDispatcher.getInstance().callAction("HomeModerator", "doControl", request);
 	}
 
 }
