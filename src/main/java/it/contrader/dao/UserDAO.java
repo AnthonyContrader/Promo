@@ -118,6 +118,10 @@ public class UserDAO implements DAO<User> {
 				if (userToUpdate.getScode() == null || userToUpdate.getScode().equals("")) {
 					userToUpdate.setScode(userRead.getScode());
 				}
+				
+				if (userToUpdate.getBarcode() < 0 || userToUpdate.getBarcode() < 0) {
+					userToUpdate.setBarcode(userRead.getBarcode());
+				}
 
 				// Update the user
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);

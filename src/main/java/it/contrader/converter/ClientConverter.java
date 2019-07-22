@@ -46,18 +46,6 @@ public class ClientConverter  implements Converter<Client, ClientDTO> {
 			return clientDTOList;
 		}
 
-		/*@Override
-		public Client toEntity(ClientDTO dto) {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-		@Override
-		public List<ClientDTO> toDTOList(List<Client> entityList) {
-			// TODO Auto-generated method stub
-			return null;
-		}*/
-
 		
 		
 	}

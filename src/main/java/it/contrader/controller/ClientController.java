@@ -1,12 +1,9 @@
 package it.contrader.controller;
 
 import java.util.List;
-
 import it.contrader.dto.ClientDTO;
-import it.contrader.dto.clientDTO;
 import it.contrader.main.MainDispatcher;
 import it.contrader.service.ClientService;
-import it.contrader.service.clientService;
 
 /**
  * 
@@ -80,7 +77,7 @@ public class ClientController implements Controller {
 			System.out.print(scode);
 									
 			
-			ClientDTO clienttoinsert = new clientDTO(idAdmin, username, password, email, scode);
+			ClientDTO clienttoinsert = new ClientDTO(idAdmin, username, password, email, scode);
 			//invoca il service
 			
 			boolean n = clientService.insert(clienttoinsert);

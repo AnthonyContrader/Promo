@@ -9,7 +9,8 @@ import it.contrader.view.AbstractView;
 public class ClientUpdateView extends AbstractView {
 	private Request request;
 
-	private int idclient;
+	//private int idclient;
+	private int idAdmin;
 	private String username;
 	private String password;
 	private String email;
@@ -38,7 +39,7 @@ public class ClientUpdateView extends AbstractView {
 	public void  showOptions() {
 		try {
 			System.out.println("Inserisci id dell'utente:");
-			idclient = Integer.parseInt(getInput());
+			idAdmin = Integer.parseInt(getInput());
 			System.out.println("Inserisci username dell'utente:");
 			username = getInput();
 			System.out.println("Inserisci password dell'utente:");
@@ -57,7 +58,7 @@ public class ClientUpdateView extends AbstractView {
 	@Override
 	public void submit() {
 		request = new Request();
-		request.put("idclient", idclient);
+		request.put("idadmin", idAdmin);
 		request.put("username", username);
 		request.put("password", password);
 		request.put("email", email);

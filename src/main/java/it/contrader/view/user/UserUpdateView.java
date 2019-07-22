@@ -38,14 +38,19 @@ public class UserUpdateView extends AbstractView {
 	@Override
 	public void showOptions() {
 		try {
-			System.out.println("Inserisci id dell'utente:");
-			id = Integer.parseInt(getInput());
-			System.out.println("Inserisci username dell'utente:");
+			System.out.println("Inserisci Id dell'utente");
+			id=Integer.parseInt(getInput());
+			System.out.println("Inserisci nuova username dell'utente:");
 			username = getInput();
-			System.out.println("Inserisci password dell'utente:");
+			System.out.println("Modifica nuova password dell'utente:");
 			password = getInput();
-			System.out.println("Inserisci tipo dell'utente:");
+			System.out.println("Modifica il tipo dell'utente:");
 			usertype = getInput();
+			System.out.println("Modifica il barcode dell'utente:");
+			barcode = Integer.parseInt(getInput());
+			System.out.println("Modifica l'scode tipo dell'utente:");
+			scode = getInput();
+			
 		} catch (Exception e) {
 
 		}
