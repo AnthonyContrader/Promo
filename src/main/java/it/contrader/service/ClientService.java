@@ -12,7 +12,7 @@ public ClientService() {
 }
 
 public boolean insert(ClientDTO dto) {
-	System.out.print("sei qua");
+	System.out.print("/t");
 	return dao.insert(converter.toEntity(dto));
 }
 }

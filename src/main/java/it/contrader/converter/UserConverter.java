@@ -32,6 +32,8 @@ public class UserConverter  implements Converter<User, UserDTO> {
 	@Override
 	public User toEntity(UserDTO userDTO) {
 		User user = new User(userDTO.getUsername(), userDTO.getPassword(), userDTO.getUsertype(), userDTO.getBarcode(), userDTO.getScode());
+		if (userDTO.getId()!=0)
+			user.setId(userDTO.getId());
 		return user;
 	}
 	
