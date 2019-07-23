@@ -35,9 +35,10 @@ public class HomeController implements Controller {
 			case "moderator": 
 				MainDispatcher.getInstance().callView("HomeModerator", request);
 				break;
-			case "client": 
+			/*case "client": 
 				MainDispatcher.getInstance().callView("HomeClient", request);
 				break;
+			*/
 			//METTERE MODERATORE 
 			default:
 				 MainDispatcher.getInstance().callView("Login", null);
