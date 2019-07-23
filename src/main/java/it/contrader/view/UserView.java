@@ -29,7 +29,7 @@ public class UserView extends AbstractView {
 	public void showResults(Request request) {
 		if (request != null) {
 			System.out.println("\n------------------- Gestione utenti ----------------\n");
-			System.out.println("ID\tUsername\tPassword\tTipo Utente");
+			System.out.println("ID\tUsername\tPassword\tTipo Utente\tBarcode\tScode");
 			System.out.println("----------------------------------------------------\n");
 			
 			@SuppressWarnings("unchecked")
