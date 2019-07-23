@@ -70,11 +70,24 @@ public class UserController implements Controller {
 			System.out.print(password);
 			usertype = request.get("usertype").toString();
 			System.out.print(usertype);
+
+			switch(usertype) {
+			case "admin":
+				System.out.print(usertype);
+				break;
+			case "moderator":
+				System.out.print(usertype);
+				break;
+			default:
+				System.out.print("\n\n ERRORE! Hai inserito un tipo utente NON valido! \n");
+				MainDispatcher.getInstance().callView(sub_package + "HomeAdmin", request);
+				break;
+			}
+			
 			scode = request.get("scode").toString();
 			System.out.print(scode);
 			barcode= Integer.parseInt(request.get("barcode").toString());
-			System.out.print(barcode);
-						
+			System.out.print(barcode);				
 			
 			UserDTO usertoinsert = new UserDTO(username, password, usertype, barcode, scode);
 			//invoca il service
