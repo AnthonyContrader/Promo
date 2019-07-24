@@ -8,7 +8,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import it.contrader.utils.ConnectionSingleton;
 import it.contrader.model.User;
-
 /**
  * 
  * @author Vittorio
@@ -37,7 +36,7 @@ public class LoginDAO {
 				resultSet.next();
 				String usertype = resultSet.getString("usertype");
 				int id = resultSet.getInt("id");
-				User user = new User(id, username, password, usertype);
+				User user = new User(username, password,usertype);
 				
 				return user;
 			}
