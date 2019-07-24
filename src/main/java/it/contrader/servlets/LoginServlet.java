@@ -1,3 +1,4 @@
+
 package it.contrader.servlets;
 
 import java.io.IOException;
@@ -25,24 +26,24 @@ public class LoginServlet extends HttpServlet {
 	 */
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		final HttpSession session = request.getSession();
-		session.setAttribute("utente", null);
+		session.setAttribute("iddevice", null);//"UTENTE"
 
 		LoginService service = new LoginService();
 
 		if (request != null) {
-			String username = request.getParameter("username").toString();
-			String password = request.getParameter("password").toString();
+			String mac = request.getParameter("mac").toString();
+			String devtype = request.getParameter("devtype").toString();
 			//come nei vecchi controller, invoca il service
-			UserDTO dto = service.login(username, password);
+			Device DTO dto = service.login(mac, devtype);
 			if (dto != null)
 				//se il login ha funzionato, salva l'utente nella sessione
-				session.setAttribute("user", dto);
+				session.setAttribute("user", dto);// CAMBIA USER
 			else
 				//altrimenti torna alla pagina di login
 				getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 			
 			//esegue una switch cae in base allo usertype per il reindirizzamento
-			switch (dto.getUsertype().toUpperCase()) {
+			switch (dto.getDevtype().toUpperCase()) {
 			case "ADMIN":
 				//questo metodo reindirizza alla JSP tramite URL con una request e una response
 				getServletContext().getRequestDispatcher("/homeadmin.jsp").forward(request, response);
