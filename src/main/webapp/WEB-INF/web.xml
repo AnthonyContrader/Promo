@@ -32,4 +32,34 @@
     <servlet-name>UserServlet</servlet-name>
     <url-pattern>/UserServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ClientServlet</display-name>
+    <servlet-name>ClientServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.ClientServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ClientServlet</servlet-name>
+    <url-pattern>/ClientServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeviceServlet</display-name>
+    <servlet-name>DeviceServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.DeviceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeviceServlet</servlet-name>
+    <url-pattern>/DeviceServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ScreenServlet</display-name>
+    <servlet-name>ScreenServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.ScreenServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ScreenServlet</servlet-name>
+    <url-pattern>/ScreenServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
