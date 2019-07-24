@@ -38,7 +38,7 @@ public class DeviceDAO implements DAO<Device> {
 				String devtype = resultSet.getString("devtype");
 				String position = resultSet.getString("position");
 				device = new Device(mac, devtype, position);
-				device.setId(iddevice);
+				device.setIddevice(iddevice);
 				devicesList.add(device);
 				
 			}

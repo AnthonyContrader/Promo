@@ -27,7 +27,7 @@ public class DeviceServlet extends HttpServlet {
 
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Service<DeviceDTO> service = new UserService();
+		Service<DeviceDTO> service = new DeviceService();
 		String mode = request.getParameter("mode");
 		DeviceDTO dto;
 		int iddevice;
