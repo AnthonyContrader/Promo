@@ -12,6 +12,8 @@ package it.contrader.dto;
 public class DeviceDTO {
 	
 	private int iddevice;
+	
+	private int idclient;
 
 	private String mac;
 	
@@ -24,14 +26,16 @@ public class DeviceDTO {
 		
 	}
 
-	public DeviceDTO (String mac, String devtype, String position) {
+	public DeviceDTO (int idclient, String mac, String devtype, String position) {
+		this.idclient = idclient;
 		this.mac = mac;
 		this.devtype = devtype;
 		this.position = position;
 	}
 
-	public DeviceDTO (int iddevice, String mac, String devtype, String position) {
+	public DeviceDTO (int iddevice, int idclient, String mac, String devtype, String position) {
 		this.iddevice = iddevice;
+		this.idclient = idclient;
 		this.mac = mac;
 		this.devtype = devtype;
 		this.position = position;
@@ -45,6 +49,14 @@ public class DeviceDTO {
 
 	public void setIddevice(int iddevice) {
 		this.iddevice = iddevice;
+	}
+	
+	public int getIdclient() {
+		return idclient;
+	}
+
+	public void setIdclient(int idclient) {
+		this.idclient = idclient;
 	}
 
 	public String getMac() {
@@ -73,6 +85,6 @@ public class DeviceDTO {
 
 	@Override
 	public String toString() {
-		return  iddevice + "\t"  + mac +"\t\t" + devtype + "\t\t" + position;
+		return  iddevice + "\t" + idclient + "\t\t" + mac +"\t\t" + devtype + "\t\t" + position;
 	}
 }

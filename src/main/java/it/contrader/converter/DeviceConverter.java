@@ -21,7 +21,7 @@ public class DeviceConverter  implements Converter<Device, DeviceDTO> {
 	 */
 	@Override
 	public DeviceDTO toDTO(Device device) {
-		DeviceDTO deviceDTO = new DeviceDTO(device.getIddevice(), device.getMac(), device.getDevtype(), device.getPosition());
+		DeviceDTO deviceDTO = new DeviceDTO(device.getIddevice(), device.getIdclient(), device.getMac(), device.getDevtype(), device.getPosition());
 		return deviceDTO;
 	}
 
@@ -31,7 +31,7 @@ public class DeviceConverter  implements Converter<Device, DeviceDTO> {
 	 */
 	@Override
 	public Device toEntity(DeviceDTO deviceDTO) {
-		Device device = new Device(deviceDTO.getIddevice(), deviceDTO.getMac(), deviceDTO.getDevtype(), deviceDTO.getPosition());
+		Device device = new Device(deviceDTO.getIddevice(), deviceDTO.getIdclient(), deviceDTO.getMac(), deviceDTO.getDevtype(), deviceDTO.getPosition());
 		return device;
 	}
 	
