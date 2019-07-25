@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title>Edit Client</title>
+<title>Modifica Client</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
@@ -20,7 +20,16 @@
 <%ClientDTO u = (ClientDTO) request.getAttribute("dto");%>
 
 
-<form id="floatleft" action="ClientServlet?mode=update&id=<%=u.getId()%>" method="post">
+<form id="floatleft" action="ClientServlet?mode=update&idclient=<%=u.getId()%>" method="post">
+ <div class="row">
+    <div class="col-25">
+     <label for="idclient">id</label>
+    </div>
+    <div class="col-75">
+      <input
+			type="text" id="idclient" name="idclient" value=<%=u.getId()%>> 
+    </div>
+  </div>
   <div class="row">
     <div class="col-25">
      <label for="idmoderator">idmoderator</label>

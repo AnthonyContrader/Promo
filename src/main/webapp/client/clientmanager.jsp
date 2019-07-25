@@ -25,8 +25,9 @@
 
 	<table>
 		<tr>
+		    <th>Idclient</th>
 		    <th>Idmoderator</th>
-			<th>Username</th>
+		   	<th>Username</th>
 			<th>Password</th>
 			<th>Scode</th>
 			<th>Email</th>
@@ -36,18 +37,24 @@
 		<%
 			for (ClientDTO u : list) {
 		%>
-		<tr>
-			<td><a href=ClientServlet?mode=read&id=<%=u.getId()%>>
-					<%=u.getUsername()%>
-			</a></td>
+		<tr> 
+			<td>				
+				<%=u.getId()%>
+			</td>
 			<td><%=u.getIdmoderator()%></td>
+			<td>
+				<a href="ClientServlet?mode=read&idclient=<%=u.getId()%>">
+					<%=u.getUsername()%> 
+				</a>
+			</td>
 			<td><%=u.getPassword()%></td>
 			<td><%=u.getScode()%></td>
 			<td><%=u.getEmail()%></td>
 			
-			<td><a href=ClientServlet?mode=read&update=true&id=<%=u.getId()%>>Modifica</a>
+			<td>
+				<a href="ClientServlet?mode=read&update=true&idclient=<%=u.getId()%>">Modifica</a>
 			</td>
-			<td><a href=ClientServlet?mode=delete&id=<%=u.getId()%>>Cancella</a>
+			<td><a href="ClientServlet?mode=delete&idclient=<%=u.getId()%>">Cancella</a>
 			</td>
 
 		</tr>
@@ -61,7 +68,15 @@
 <form id="floatright" action="ClientServlet?mode=insert" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="idmoderator">Idmoderator</label>
+      <label for="idclient">Idclient</label>
+    </div>
+    <div class="col-75">
+      <input type="number" id="idclient" name="idclient" placeholder="inserisci id_client">
+    </div>
+  </div>
+   <div class="row">
+    <div class="col-25">
+      <label for="idclient">Idmoderator</label>
     </div>
     <div class="col-75">
       <input type="number" id="idmoderator" name="idmoderator" placeholder="inserisci id_moderator">

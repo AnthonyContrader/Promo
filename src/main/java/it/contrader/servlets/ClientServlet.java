@@ -64,7 +64,7 @@ public class ClientServlet extends HttpServlet {
 			String password = request.getParameter("password").toString();
 			String scode = request.getParameter("scode").toString();
 			String email = request.getParameter("email").toString();
-			dto = new ClientDTO (idmoderator, username,password, scode, email);
+			dto = new ClientDTO (idmoderator, username, password, scode, email);
 			ans = service.insert(dto);
 			request.setAttribute("ans", ans);
 			updateList(request);

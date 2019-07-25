@@ -44,7 +44,7 @@
 			<td><%=u.getUsertype()%></td>
 			<td><%=u.getBarcode()%></td>
 			<td><%=u.getScode()%></td>
-			<td><a href=UserServlet?mode=read&update=true&id=<%=u.getId()%>>Modifica</a>
+			<td><a href="UserServlet?mode=read&update=true&id=<%=u.getId()%>">Modifica</a>
 			</td>
 			<td><a href=UserServlet?mode=delete&id=<%=u.getId()%>>Cancella</a>
 			</td>
