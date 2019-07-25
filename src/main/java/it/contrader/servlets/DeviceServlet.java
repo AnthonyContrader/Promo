@@ -35,7 +35,7 @@ public class DeviceServlet extends HttpServlet {
 
 		switch (mode.toUpperCase()) {
 
-		case "USERLIST":
+		case "DEVICELIST":
 			updateList(request);
 			getServletContext().getRequestDispatcher("/device/devicemanager.jsp").forward(request, response);
 			break;
@@ -55,10 +55,11 @@ public class DeviceServlet extends HttpServlet {
 			break;
 
 		case "INSERT":
+			int idclient = Integer.parseInt(request.getParameter("idclient").toString());
 			String mac = request.getParameter("mac").toString();
 			String devtype = request.getParameter("devtype").toString();
 			String position = request.getParameter("position").toString();
-			dto = new DeviceDTO (mac,devtype,position);
+			dto = new DeviceDTO (idclient,mac,devtype,position);
 			ans = service.insert(dto);
 			request.setAttribute("ans", ans);
 			updateList(request);
@@ -66,11 +67,12 @@ public class DeviceServlet extends HttpServlet {
 			break;
 			
 		case "UPDATE":
+			idclient = Integer.parseInt(request.getParameter("idclient"));
 			mac = request.getParameter("mac");
 			devtype = request.getParameter("devtype");
 			position = request.getParameter("position");
 			iddevice = Integer.parseInt(request.getParameter("iddevice"));
-			dto = new DeviceDTO (iddevice,mac, devtype, position);
+			dto = new DeviceDTO (iddevice, idclient, mac, devtype, position);
 			ans = service.update(dto);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/device/devicemanager.jsp").forward(request, response);

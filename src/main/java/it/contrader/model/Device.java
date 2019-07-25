@@ -8,6 +8,8 @@ public class Device {
 	 * Qui sotto definisco gli attributi di Device. 
 	 */
 	private int iddevice;
+	
+	private int idclient;
 
 	private String mac;
 	
@@ -22,14 +24,16 @@ public class Device {
 		
 	}
 
-	public Device (String mac, String devtype, String position) {
+	public Device (int idclient, String mac, String devtype, String position) {
+		this.idclient = idclient;
 		this.mac = mac;
 		this.devtype = devtype;
 		this.position = position;
 	}
 
-	public Device (int iddevice, String mac, String devtype, String position) {
+	public Device (int iddevice, int idclient, String mac, String devtype, String position) {
 		this.iddevice = iddevice;
+		this.idclient = idclient;
 		this.mac = mac;
 		this.devtype = devtype;
 		this.position = position;
@@ -44,8 +48,16 @@ public class Device {
 		return iddevice;
 	}
 
-	public void setIddevice(int iddev) {
+	public void setIddevice(int iddevice) {
 		this.iddevice = iddevice;
+	}
+	
+	public int getIdclient() {
+		return idclient;
+	}
+	
+	public void setIdclient (int idclient) {
+		this.idclient = idclient;
 	}
 
 	public String getMac() {
@@ -74,7 +86,7 @@ public class Device {
 	
 	@Override
 	public String toString() {
-		return  iddevice + "\t"  + mac +"\t\t" +  devtype  + "\t\t" + position;
+		return  iddevice + "\t" + idclient + "\t\t" + mac +"\t\t" +  devtype  + "\t\t" + position;
 	}
 
 	//Metodo per il confronto degli oggetti
@@ -88,6 +100,11 @@ public class Device {
 			return false;
 		Device other = (Device) obj;
 		if (iddevice != other.iddevice)
+			return false;
+		if (idclient == 0) {
+			if (other.idclient != 0)
+				return false;
+		} else if (idclient != other.idclient)
 			return false;
 		if (mac == null) {
 			if (other.mac != null)
