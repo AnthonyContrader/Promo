@@ -6,12 +6,6 @@ import java.util.List;
 import it.contrader.utils.ConnectionSingleton;
 import it.contrader.model.Device;
 
-/**
- * 
- * @author Vittorio
- *
- *Per i dettagli della classe vedi Guida sez 6: DAO
- */
 public class DeviceDAO implements DAO<Device> {
 
 	private final String QUERY_ALL = "SELECT * FROM device";

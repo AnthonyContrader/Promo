@@ -41,7 +41,7 @@ public class DeviceServlet extends HttpServlet {
 			break;
 
 		case "READ":
-			iddevice = Integer.parseInt(request.getParameter("id"));
+			iddevice = Integer.parseInt(request.getParameter("iddevice"));
 			dto = service.read(iddevice);
 			request.setAttribute("dto", dto);
 			
