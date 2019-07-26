@@ -5,11 +5,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="../css/vittoriostyle.css" rel="stylesheet">
+<link href="css/vittoriostyle.css" rel="stylesheet">
 <title>Client Manager</title>
 </head>
 <body>
-<%@ include file="../css/header.jsp" %>
+
 
 <div class="navbar">
   <a  href="homemoderator.jsp">Home</a>
@@ -52,7 +52,7 @@
 			<td><%=u.getEmail()%></td>
 			
 			<td>
-				<a href="ClientServlet?mode=read&update=true&idclient=<%=u.getId()%>">Modifica</a>
+				<a href="ClientServlet?mode=read&update=true&idclient=<%=u.getId()%>&idmoderator=<%=u.getIdmoderator()%>">Modifica</a>
 			</td>
 			<td><a href="ClientServlet?mode=delete&idclient=<%=u.getId()%>">Cancella</a>
 			</td>
@@ -66,55 +66,47 @@
 
 
 <form id="floatright" action="ClientServlet?mode=insert" method="post">
-  <div class="row">
-    <div class="col-25">
-      <label for="idclient">Idclient</label>
-    </div>
-    <div class="col-75">
-      <input type="number" id="idclient" name="idclient" placeholder="inserisci id_client">
-    </div>
-  </div>
    <div class="row">
-    <div class="col-25">
-      <label for="idclient">Idmoderator</label>
-    </div>
+	    <div class="col-25">
+	      <label for="idmoderator">Idmoderator</label>
+	    </div>
     <div class="col-75">
-      <input type="number" id="idmoderator" name="idmoderator" placeholder="inserisci id_moderator">
+      	<input type="number" id="idmoderator" name="idmoderator" placeholder="inserisci id_moderator">
     </div>
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="user">Username</label>
+      <label for="username">Username</label>
     </div>
     <div class="col-75">
-      <input type="text" id="user" name="username" placeholder="inserisci username">
+      <input type="text" id="username" name="username" placeholder="inserisci username">
     </div>
   </div>
   <div class="row">
     <div class="col-25">
-     <label for="pass">Password</label>
+     	<label for="password">Password</label>
     </div>
     <div class="col-75">
-      <input type="text" id="pass" name="password" placeholder="inserisci password"> 
+      	<input type="text" id="password" name="password" placeholder="inserisci password"> 
     </div>
   </div>
- <div class="row">
+  <div class="row">
     <div class="col-25">
-      <label for="scode">Scode</label>
+     	<label for="scode">Scode</label>
     </div>
     <div class="col-75">
-      <input type="text" id="scode" name="scode" placeholder="inserisci scode alfanumerico">
+      	<input type="text" id="scode" name="scode" placeholder="inserisci scode alfanumerico">
     </div>
   </div>
-      <div class="row">
-    <div class="col-25">
-      <label for="email">Email</label>
-    </div>
-    <div class="col-75">
-      <input type="text" id="email" name="email" placeholder="inserisci l'email">
-    </div>
+  <div class="row">
+	   <div class="col-25">
+	     <label for="email">Email</label>
+	   </div>
+	   <div class="col-75">
+	     <input type="text" id="email" name="email" placeholder="inserisci l'email">
+	   </div>
   </div> 
-      <button type="submit" >Insert</button>
+  <button type="submit" >INSERISCI</button>
 </form>
 
 </div>

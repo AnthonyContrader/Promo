@@ -18,7 +18,7 @@ public class ClientDAO implements DAO<Client> {
 	private final String QUERY_ALL = "SELECT * FROM client";
 	private final String QUERY_CREATE = "INSERT INTO client (idmoderator, username, password, scode, email) VALUES (?,?,?,?,?)";
 	private final String QUERY_READ = "SELECT * FROM client WHERE idclient=?";
-	private final String QUERY_UPDATE = "UPDATE client SET idmoderator=?, username=?, password=?, scode=?, email=?, WHERE idclient=?";
+	private final String QUERY_UPDATE = "UPDATE client SET idmoderator=?, username=?, password=?, scode=?, email=? WHERE idclient=?";
 	private final String QUERY_DELETE = "DELETE FROM client WHERE idclient=?";
 
 	public ClientDAO() {
@@ -39,7 +39,7 @@ public class ClientDAO implements DAO<Client> {
 				String password = resultSet.getString("password");
 				String scode = resultSet.getString("scode");
 				String email = resultSet.getString("email");
-				client = new Client(idmoderator,username, password, scode, email);
+				client = new Client(idclient,idmoderator,username, password, scode, email);
 				client.setId(idclient);
 				clientsList.add(client);
 			}
@@ -75,15 +75,15 @@ public class ClientDAO implements DAO<Client> {
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
 			String username, password, scode, email;
-			int  idmoderator;
-
+			int idmoderator;
+			idmoderator= Integer.parseInt(resultSet.getString("idmoderator"));
 			username = resultSet.getString("username");
 			password = resultSet.getString("password");
-			idmoderator = Integer.parseInt(resultSet.getString("idmoderator"));
 			scode = resultSet.getString("scode");
 			email = resultSet.getString("email");
 			Client client = new Client(idmoderator, username, password,scode, email);
 			client.setId(resultSet.getInt("idclient"));
+			client.setIdmoderator(resultSet.getInt("idmoderator"));
 
 			return client;
 		} catch (SQLException e) {
@@ -128,6 +128,7 @@ public class ClientDAO implements DAO<Client> {
 				preparedStatement.setString(3, clientToUpdate.getPassword());
 				preparedStatement.setString(4, clientToUpdate.getScode());
 				preparedStatement.setString(5, clientToUpdate.getEmail());
+				preparedStatement.setInt(6, clientToUpdate.getId());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)
 					return true;

@@ -59,14 +59,14 @@ public class ClientServlet extends HttpServlet {
 			break;
 
 		case "INSERT":
-			int idmoderator = Integer.parseInt(request.getParameter("idmoderator"));
+			int idmoderator = Integer.parseInt(request.getParameter("idmoderator").toString());
 			String username = request.getParameter("username").toString();
 			String password = request.getParameter("password").toString();
 			String scode = request.getParameter("scode").toString();
 			String email = request.getParameter("email").toString();
 			dto = new ClientDTO (idmoderator, username, password, scode, email);
 			ans = service.insert(dto);
-			request.setAttribute("ans", ans);
+			request.setAttribute("ans", ans);	
 			updateList(request);
 			getServletContext().getRequestDispatcher("/client/clientmanager.jsp").forward(request, response);
 			break;

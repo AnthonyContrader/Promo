@@ -27,7 +27,7 @@
     </div>
     <div class="col-75">
       <input
-			type="text" id="idclient" name="idclient" value=<%=u.getId()%>> 
+			type="text" id="idclient" name="idclient" value="<%=u.getId()%>"> 
     </div>
   </div>
   <div class="row">
@@ -36,7 +36,7 @@
     </div>
     <div class="col-75">
       <input
-			type="text" id="idmoderator" name="idmoderator" value=<%=u.getIdmoderator()%>> 
+			type="text" id="idmoderator" name="idmoderator" value="<%=u.getIdmoderator()%>"> 
     </div>
   </div>
   <div class="row">
@@ -44,7 +44,7 @@
       <label for="user">Username</label>
     </div>
     <div class="col-75">
-      <input type="text" id="user" name="username" value=<%=u.getUsername()%>>
+      <input type="text" id="user" name="username" value="<%=u.getUsername()%>">
     </div>
   </div>
   <div class="row">
@@ -53,7 +53,7 @@
     </div>
     <div class="col-75">
       <input
-			type="text" id="pass" name="password" value=<%=u.getPassword()%>> 
+			type="text" id="pass" name="password" value="<%=u.getPassword()%>"> 
     </div>
   </div>
   <div class="row">
@@ -62,7 +62,7 @@
     </div>
     <div class="col-75">
       <input
-			type="text" id="scode" name="scode" value=<%=u.getScode()%>> 
+			type="text" id="scode" name="scode" value="<%=u.getScode()%>"> 
     </div>
   </div>
   <div class="row">
@@ -71,10 +71,10 @@
     </div>
     <div class="col-75">
       <input
-			type="text" id="email" name="email" value=<%=u.getEmail()%>> 
+			type="text" id="email" name="email" value="<%=u.getEmail()%>"> 
     </div>
   </div>
-      <button type="submit" >Edit</button>
+      <button type="submit">MODIFICA</button>
 </form>
 
 	
