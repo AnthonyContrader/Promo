@@ -71,7 +71,7 @@
 	      <label for="idmoderator">Idmoderator</label>
 	    </div>
     <div class="col-75">
-      	<input type="number" id="idmoderator" name="idmoderator" placeholder="inserisci id_moderator">
+      	<input type="number" id="idmoderator" name="idmoderator" placeholder="inserisci id_moderator" min="1">
     </div>
   </div>
   <div class="row">
