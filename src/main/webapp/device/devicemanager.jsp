@@ -78,6 +78,7 @@
     </div>
    		 <div class="col-75">
  			<select id="type" name="position">
+ 			
   				<option value="negozio 1">Negozio 1</option>
   				
   				<option value="negozio 2">Negozio 2</option>
