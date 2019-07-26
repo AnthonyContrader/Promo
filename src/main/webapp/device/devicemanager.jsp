@@ -60,7 +60,7 @@
 <form id="floatright" action="DeviceServlet?mode=insert" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="Device"></label>
+      <label for="Device">MAC</label>
     </div>
     <div class="col-75">
       <input type="text" id="device" name="mac" placeholder="inserisci il MAC del dispositivo">

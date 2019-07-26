@@ -15,6 +15,8 @@
 <div class="navbar">
   <a class="active" href="homemoderator.jsp">Home</a>
   <a href="ClientServlet?mode=clientlist">Clients</a>
+    <a href="DeviceServlet?mode=devicelist">Dispositivi</a>
+    <a href="ScreenServlet?mode=screenlist">Screen</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 
