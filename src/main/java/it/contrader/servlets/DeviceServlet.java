@@ -41,7 +41,7 @@ public class DeviceServlet extends HttpServlet {
 			break;
 
 		case "READ":
-			iddevice = Integer.parseInt(request.getParameter("iddevice"));
+			iddevice = Integer.parseInt(request.getParameter("iddevice").toString());
 			dto = service.read(iddevice);
 			request.setAttribute("dto", dto);
 			
@@ -68,12 +68,12 @@ public class DeviceServlet extends HttpServlet {
 			
 		case "UPDATE":
 			iddevice = Integer.parseInt(request.getParameter("iddevice"));
-			idowner = Integer.parseInt(request.getParameter("idowner").toString());
+			idowner = Integer.parseInt(request.getParameter("idowner"));
 			mac = request.getParameter("mac");
 			devtype = request.getParameter("devtype");
 			position = request.getParameter("position");
 			iddevice = Integer.parseInt(request.getParameter("iddevice"));
-			dto = new DeviceDTO (iddevice, iddevice, mac, devtype, position);
+			dto = new DeviceDTO (iddevice, idowner, mac, devtype, position);
 			ans = service.update(dto);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/device/devicemanager.jsp").forward(request, response);
