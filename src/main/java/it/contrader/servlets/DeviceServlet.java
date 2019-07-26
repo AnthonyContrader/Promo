@@ -55,11 +55,11 @@ public class DeviceServlet extends HttpServlet {
 			break;
 
 		case "INSERT":
-			iddevice = Integer.parseInt(request.getParameter("iddevice").toString());
+			int idowner = Integer.parseInt(request.getParameter("idowner").toString());
 			String mac = request.getParameter("mac").toString();
 			String devtype = request.getParameter("devtype").toString();
 			String position = request.getParameter("position").toString();
-			dto = new DeviceDTO (iddevice,mac,devtype,position);
+			dto = new DeviceDTO (idowner,mac,devtype,position);
 			ans = service.insert(dto);
 			request.setAttribute("ans", ans);
 			updateList(request);
@@ -68,6 +68,7 @@ public class DeviceServlet extends HttpServlet {
 			
 		case "UPDATE":
 			iddevice = Integer.parseInt(request.getParameter("iddevice"));
+			idowner = Integer.parseInt(request.getParameter("idowner").toString());
 			mac = request.getParameter("mac");
 			devtype = request.getParameter("devtype");
 			position = request.getParameter("position");
