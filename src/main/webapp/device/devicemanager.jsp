@@ -12,7 +12,7 @@
 <%@ include file="../css/header.jsp" %>
 
 <div class="navbar">
-  <a  href="homeadmin.jsp">Home</a>
+  <a  href="homemoderator.jsp">Home</a>
   <a class="active" href="UserServlet?mode=userlist">Users</a>
   <a class="active" href="DeviceServlet?mode=userlist">Dispositivi</a>
   <a class="active" href="ScreenServlet?mode=userlist">Screen</a>
