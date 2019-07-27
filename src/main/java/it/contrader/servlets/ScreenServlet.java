@@ -67,8 +67,8 @@ public class ScreenServlet extends HttpServlet {
 			break;
 			
 		case "UPDATE":
-			output = request.getParameter("output");
 			idscreen = Integer.parseInt(request.getParameter("idscreen"));
+			output = request.getParameter("output");
 			dto = new ScreenDTO (idscreen,output);
 			ans = service.update(dto);
 			updateList(request);

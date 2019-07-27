@@ -46,6 +46,6 @@ public class ScreenDTO {
 
 	@Override
 	public String toString() {
-		return  idscreen + "\t"  + output;
+		return  idscreen + "\t\t"  + output;
 	}
 }

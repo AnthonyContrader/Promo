@@ -32,6 +32,10 @@ public class ScreenConverter  implements Converter<Screen, ScreenDTO> {
 	@Override
 	public Screen toEntity(ScreenDTO screenDTO) {
 		Screen screen = new Screen(screenDTO.getIdscreen(), screenDTO.getOutput());
+
+		if (screenDTO.getIdscreen() != 0)
+			screen.setIdscreen(screenDTO.getIdscreen());
+		
 		return screen;
 	}
 	

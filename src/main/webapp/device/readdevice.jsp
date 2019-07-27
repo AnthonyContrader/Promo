@@ -11,7 +11,7 @@
 <%@ include file="../css/header.jsp" %>
 <div class="navbar">
   <a href="homeadmin.jsp">Home</a>
-  <a class="active"  href="UserServlet?mode=userlist">Users</a>
+  <a class="active"  href="DeviceServlet?mode=devicelist">Dispositivi</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 <br>
@@ -22,11 +22,15 @@
 
 <table>
 	<tr> 
+	    <th>Iddevice</th>
+	    <th>Idowner</th>
 		<th>MAC</th>
 		<th>DevType</th>
 		<th>Position</th>
 	</tr>
 	<tr>
+	    <td><%=u.getIddevice()%></td>
+	    <td><%=u.getIdowner()%></td>
 		<td><%=u.getMac()%></td>
 		<td> <%=u.getDevtype()%></td>
 		<td> <%=u.getPosition()%></td>

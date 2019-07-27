@@ -5,15 +5,15 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="../css/vittoriostyle.css" rel="stylesheet">
-<title>User Manager</title>
+<link href="css/vittoriostyle.css" rel="stylesheet">
+<title>Device Manager</title>
 </head>
 <body>
-<%@ include file="../css/header.jsp" %>
+
 
 <div class="navbar">
   <a  href="homemoderator.jsp">Home</a>
-  <a class="active" href="UserServlet?mode=userlist">Users</a>
+  <a class="active" href="ClientServlet?mode=clientlist">Clients</a>
   <a class="active" href="DeviceServlet?mode=devicelist">Dispositivi</a>
   <a class="active" href="ScreenServlet?mode=screenlist">Screen</a>
   <a href="LogoutServlet" id="logout">Logout</a>
@@ -27,11 +27,11 @@
 
 	<table>
 		<tr>
-			<th>IdDevice</th>
+			<th>Iddevice</th>
+			<th>Idowner</th>
 			<th>Mac</th>
 			<th>Devtype</th>
 			<th>Position</th>
-			<th>IdOwner</th>
 			<th></th>
 			<th></th>
 		</tr>
@@ -39,14 +39,20 @@
 			for (DeviceDTO u : list) {
 		%>
 		<tr>
-			<td><a href=DeviceServlet?mode=read&id=<%=u.getIddevice()%>>
+		    <td>				
+				<%=u.getIddevice()%>
+			</td>
+			<td><%=u.getIdowner()%></td>
+			
+	        <td><a href="DeviceServlet?mode=read&iddevice=<%=u.getIddevice()%>">
 					<%=u.getMac()%>
-			</a></td>
+			   </a>
 			<td><%=u.getDevtype()%></td>
 			<td><%=u.getPosition()%></td>
-			<td><a href="DeviceServlet?mode=read&update=true&id=<%=u.getIddevice()%>">Modifica</a>
+			<td>
+			    <a href="DeviceServlet?mode=read&update=true&iddevice=<%=u.getIddevice()%>&idowner=<%=u.getIdowner()%>">Modifica</a>
 			</td>
-			<td><a href=DeviceServlet?mode=delete&id=<%=u.getIddevice()%>>Cancella</a>
+			<td><a href=DeviceServlet?mode=delete&iddevice=<%=u.getIddevice()%>>Cancella</a>
 			</td>
 
 		</tr>
@@ -58,12 +64,21 @@
 
 
 <form id="floatright" action="DeviceServlet?mode=insert" method="post">
+    
+   <div class="row">
+	    <div class="col-25">
+	      <label for="Idowner">Idowner</label>
+	    </div>
+    <div class="col-75">
+      	<input type="number" id="Idowner" name="Idowner" placeholder="inserisci id_Idowner" min="1">
+    </div>
+  </div>
   <div class="row">
     <div class="col-25">
-      <label for="Device">MAC</label>
+      <label for="mac">MAC</label>
     </div>
     <div class="col-75">
-      <input type="text" id="device" name="mac" placeholder="inserisci il MAC del dispositivo">
+      <input type="text" id="mac" name="mac" placeholder="inserisci il MAC del dispositivo">
     </div>
   </div>
   <div class="row">

@@ -13,7 +13,7 @@ public class DeviceDTO {
 	
 	private int iddevice;
 	
-	private int idclient;
+	private int idowner;
 
 	private String mac;
 	
@@ -26,16 +26,16 @@ public class DeviceDTO {
 		
 	}
 
-	public DeviceDTO (int idclient, String mac, String devtype, String position) {
-		this.idclient = idclient;
+	public DeviceDTO (int idowner, String mac, String devtype, String position) {
+		this.idowner = idowner;
 		this.mac = mac;
 		this.devtype = devtype;
 		this.position = position;
 	}
 
-	public DeviceDTO (int iddevice, int idclient, String mac, String devtype, String position) {
+	public DeviceDTO (int iddevice, int idowner, String mac, String devtype, String position) {
 		this.iddevice = iddevice;
-		this.idclient = idclient;
+		this.idowner = idowner;
 		this.mac = mac;
 		this.devtype = devtype;
 		this.position = position;
@@ -51,12 +51,12 @@ public class DeviceDTO {
 		this.iddevice = iddevice;
 	}
 	
-	public int getIdclient() {
-		return idclient;
+	public int getIdowner() {
+		return idowner;
 	}
 
-	public void setIdclient(int idclient) {
-		this.idclient = idclient;
+	public void setIdowner(int idowner) {
+		this.idowner = idowner;
 	}
 
 	public String getMac() {
@@ -85,6 +85,6 @@ public class DeviceDTO {
 
 	@Override
 	public String toString() {
-		return  iddevice + "\t" + idclient + "\t\t" + mac +"\t\t" + devtype + "\t\t" + position;
+		return  iddevice + "\t" + idowner + "\t\t" + mac +"\t\t" + devtype + "\t\t" + position;
 	}
 }

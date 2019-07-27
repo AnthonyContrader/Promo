@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title>Edit Screen</title>
+<title>Modifica Screen</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
@@ -23,10 +23,10 @@
 <form id="floatleft" action="ScreenServlet?mode=update&idscreen=<%=u.getIdscreen()%>" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="screen">Output</label>
+      <label for="output">output</label>
     </div>
     <div class="col-75">
-      <input type="text" id="screen" name="output" value=<%=u.getOutput()%>>
+      <input type="text" id="output" name="output" value=<%=u.getOutput()%>>
     </div>
   </div>
   </div>

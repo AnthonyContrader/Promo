@@ -9,9 +9,9 @@ import it.contrader.model.Device;
 public class DeviceDAO implements DAO<Device> {
 
 	private final String QUERY_ALL = "SELECT * FROM device";
-	private final String QUERY_CREATE = "INSERT INTO device (iddevice, idclient, mac, devtype, position) VALUES (?,?,?,?,?)";
+	private final String QUERY_CREATE = "INSERT INTO device (idowner, mac, devtype, position) VALUES (?,?,?,?)";
 	private final String QUERY_READ = "SELECT * FROM device WHERE iddevice=?";
-	private final String QUERY_UPDATE = "UPDATE device SET idclient=?, mac=?, devtype=?, position=? WHERE iddevice=?";
+	private final String QUERY_UPDATE = "UPDATE device SET idowner=?, mac=?, devtype=?, position=? WHERE iddevice=?";
 	private final String QUERY_DELETE = "DELETE FROM device WHERE iddevice=?";
 
 	public DeviceDAO() {
@@ -28,11 +28,11 @@ public class DeviceDAO implements DAO<Device> {
 			while (resultSet.next()) {
 				
 				int iddevice = resultSet.getInt("iddevice");
-				int idclient = resultSet.getInt("idclient");
+				int idowner = resultSet.getInt("idowner");
 				String mac = resultSet.getString("mac");
 				String devtype = resultSet.getString("devtype");
 				String position = resultSet.getString("position");
-				device = new Device(idclient, mac, devtype, position);
+				device = new Device(iddevice, idowner, mac, devtype, position);
 				device.setIddevice(iddevice);
 				devicesList.add(device);
 				
@@ -47,7 +47,7 @@ public class DeviceDAO implements DAO<Device> {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {	
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
-			preparedStatement.setInt(1, deviceToInsert.getIdclient());
+			preparedStatement.setInt(1, deviceToInsert.getIdowner());
 			preparedStatement.setString(2, deviceToInsert.getMac());
 			preparedStatement.setString(3, deviceToInsert.getDevtype());
 			preparedStatement.setString(4, deviceToInsert.getPosition());
@@ -68,15 +68,17 @@ public class DeviceDAO implements DAO<Device> {
 			preparedStatement.setInt(1, iddevice);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
-			int idclient;
+			
 			String mac, devtype, position;
+			int idowner;
 
-			idclient = resultSet.getInt("idclient");
+			idowner = Integer.parseInt(resultSet.getString("idowner"));
 			mac = resultSet.getString("mac");
 			devtype = resultSet.getString("devtype");
 			position = resultSet.getString("position");
-			Device device = new Device(idclient, mac, devtype, position);
+			Device device = new Device(idowner, mac, devtype,position);
 			device.setIddevice(resultSet.getInt("iddevice"));
+			device.setIdowner(resultSet.getInt("idowner"));
 
 			return device;
 		} catch (SQLException e) {
@@ -96,8 +98,8 @@ public class DeviceDAO implements DAO<Device> {
 		if (!deviceRead.equals(deviceToUpdate)) {
 			try {
 				// Fill the deviceToUpdate object
-				if (deviceToUpdate.getIdclient() == 0 || deviceToUpdate.getIdclient() ==0) {
-					deviceToUpdate.setIdclient(deviceRead.getIdclient());
+				if (deviceToUpdate.getIdowner() < 0 ) {
+					deviceToUpdate.setIdowner(deviceRead.getIdowner());
 				}
 				
 				if (deviceToUpdate.getMac() == null || deviceToUpdate.getMac().equals("")) {
@@ -115,7 +117,7 @@ public class DeviceDAO implements DAO<Device> {
 
 				// Update the device
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
-				preparedStatement.setInt(1, deviceToUpdate.getIdclient());
+				preparedStatement.setInt(1, deviceToUpdate.getIdowner());
 				preparedStatement.setString(2, deviceToUpdate.getMac());
 				preparedStatement.setString(3, deviceToUpdate.getDevtype());
 				preparedStatement.setString(4, deviceToUpdate.getPosition());

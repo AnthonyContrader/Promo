@@ -99,7 +99,7 @@ public class ScreenDAO implements DAO<Screen> {
 				// Update the user
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 				preparedStatement.setString(1, screenToUpdate.getOutput());
-				preparedStatement.setInt(4, screenToUpdate.getIdscreen());
+				preparedStatement.setInt(2, screenToUpdate.getIdscreen());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)
 					return true;

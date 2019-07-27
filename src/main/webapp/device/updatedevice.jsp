@@ -5,13 +5,13 @@
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title>Edit User</title>
+<title>Modifica Dispositivi</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
 <div class="navbar">
   <a href="homeadmin.jsp">Home</a>
-  <a class="active" href="UserServlet?mode=userlist">Users</a>
+  <a class="active" href="DeviceServlet?mode=devicelist">Dispositivi</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 <br>
@@ -21,6 +21,24 @@
 
 
 <form id="floatleft" action="DeviceServlet?mode=update&id=<%=u.getIddevice()%>" method="post">
+   <div class="row">
+    <div class="col-25">
+     <label for="iddevice">iddevice</label>
+    </div>
+    <div class="col-75">
+      <input
+			type="text" id="iddevice" name="iddevice" value="<%=u.getIddevice()%>"> 
+    </div>
+  </div>
+   <div class="row">
+    <div class="col-25">
+     <label for="idowner">idowner</label>
+    </div>
+    <div class="col-75">
+      <input
+			type="text" id="idowner" name="idowner" value="<%=u.getIdowner()%>"> 
+    </div>
+  </div>
   <div class="row">
     <div class="col-25">
       <label for="mac">MAC</label>
@@ -56,7 +74,7 @@
 			</select>
     	</div>
   </div>
-      <button type="submit" >Edit</button>
+      <button type="submit" >Modifica</button>
 </form>
 </div>
 <br>

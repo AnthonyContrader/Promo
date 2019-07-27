@@ -5,11 +5,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="../css/vittoriostyle.css" rel="stylesheet">
+<link href="css/vittoriostyle.css" rel="stylesheet">
 <title>Screen Manager</title>
 </head>
 <body>
-<%@ include file="../css/header.jsp" %>
+
 
 <div class="navbar">
   <a  href="homemoderator.jsp">Home</a>
@@ -25,18 +25,24 @@
 
 	<table>
 		<tr>
+		    <th>Idscreen</th>
 			<th>Output</th>
 		</tr>
 		<%
 			for (ScreenDTO u : list) {
 		%>
 		<tr>
-			<td><a href=ScreenServlet?mode=read&idscreen=<%=u.getIdscreen()%>>
+			<td>
+			        <%=u.getIdscreen()%>
+			<td>        
+			    <a href=ScreenServlet?mode=read&idscreen=<%=u.getIdscreen()%>>
 					<%=u.getOutput()%>
-			</a></td>
-            <td><a href="ScreenServlet?mode=read&update=true&idscreen=<%=u.getIdscreen()%>">Modifica</a>
+			    </a></td>
+            <td>
+                <a href="ScreenServlet?mode=read&update=true&idscreen=<%=u.getIdscreen()%>">Modifica</a>
 			</td>
-			<td><a href=UserServlet?mode=delete&idscreen=<%=u.getIdscreen()%>>Cancella</a>
+			<td>
+			    <a href=ScreenServlet?mode=delete&idscreen=<%=u.getIdscreen()%>>Cancella</a>
 			</td>
 
 		</tr>
@@ -50,14 +56,14 @@
 <form id="floatright" action="ScreenServlet?mode=insert" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="screen">Output</label>
+      <label for="output">Output</label>
     </div>
     <div class="col-75">
-      <input type="text" id="screen" name="output" placeholder="inserisci output">
+      <input type="text" id="output" name="output" placeholder="inserisci output">
     </div>
   </div>
   </div>
-      <button type="submit" >Insert</button>
+      <button type="submit" >INSERISCI</button>
 </form>
 
 </div>
