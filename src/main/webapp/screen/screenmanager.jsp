@@ -27,6 +27,8 @@
 		<tr>
 		    <th>Idscreen</th>
 			<th>Output</th>
+			<th></th>
+			<th></th>
 		</tr>
 		<%
 			for (ScreenDTO u : list) {
@@ -62,8 +64,7 @@
       <input type="text" id="output" name="output" placeholder="inserisci output">
     </div>
   </div>
-  </div>
-      <button type="submit" >INSERISCI</button>
+  <button type="submit">INSERISCI</button>
 </form>
 
 </div>

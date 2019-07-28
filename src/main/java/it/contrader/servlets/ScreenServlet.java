@@ -53,7 +53,7 @@ public class ScreenServlet extends HttpServlet {
 				
 			}
 			
-			else getServletContext().getRequestDispatcher("/user/updatescreen.jsp").forward(request, response);
+			else getServletContext().getRequestDispatcher("/screen/updatescreen.jsp").forward(request, response);
 			
 			break;
 

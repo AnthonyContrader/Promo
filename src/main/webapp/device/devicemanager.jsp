@@ -67,10 +67,10 @@
     
    <div class="row">
 	    <div class="col-25">
-	      <label for="Idowner">Idowner</label>
+	      <label for="idowner">Idowner</label>
 	    </div>
     <div class="col-75">
-      	<input type="number" id="Idowner" name="Idowner" placeholder="inserisci id_Idowner" min="1">
+      	<input type="number" id="idowner" name="idowner" placeholder="inserisci id_Idowner" min="1">
     </div>
   </div>
   <div class="row">

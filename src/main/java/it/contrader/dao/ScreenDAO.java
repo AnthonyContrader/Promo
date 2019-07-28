@@ -15,11 +15,10 @@ import it.contrader.model.Screen;
  */
 public class ScreenDAO implements DAO<Screen> {
 
-	private final String QUERY_ALL = "SELECT * FROM screen"
-			+ "";
+	private final String QUERY_ALL = "SELECT * FROM screen";
 	private final String QUERY_CREATE = "INSERT INTO screen (output) VALUES (?)";
 	private final String QUERY_READ = "SELECT * FROM screen WHERE idscreen=?";
-	private final String QUERY_UPDATE = "UPDATE screen SET output=?";
+	private final String QUERY_UPDATE = "UPDATE screen SET output=? WHERE idscreen=?";
 	private final String QUERY_DELETE = "DELETE FROM screen WHERE idscreen=?";
 
 	public ScreenDAO() {

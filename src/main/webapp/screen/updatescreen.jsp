@@ -29,8 +29,7 @@
       <input type="text" id="output" name="output" value=<%=u.getOutput()%>>
     </div>
   </div>
-  </div>
-      <button type="submit" >Edit</button>
+  <button type="submit" >Edit</button>
 </form>
 
 	
