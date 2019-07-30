@@ -40,8 +40,8 @@ public class UserController {
 	
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String delete(HttpServletRequest request) {
-		int id = Integer.parseInt(request.getParameter("id"));
-		request.setAttribute("id", id);
+		int id = Integer.parseInt(request.getParameter("idUser"));
+		request.setAttribute("idUser", id);
 		this.userService.deleteUserById(id);
 		visualUser(request);
 		return "homeUser";
@@ -74,7 +74,13 @@ public class UserController {
 		String password = request.getParameter("password").toString();
 		String ruolo = request.getParameter("ruolo").toString();
 
-		UserDTO userObj = new UserDTO(0, username, password, ruolo,"");
+		UserDTO userObj = new UserDTO();
+		
+		userObj.setIdUser(0);
+		userObj.setRuolo(ruolo);
+		userObj.setPassword(password);
+		userObj.setUsername(username);
+		userObj.setBarcode("");
 		
 		userService.insertUser(userObj);
 

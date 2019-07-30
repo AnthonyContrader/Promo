@@ -15,7 +15,8 @@ public class ConverterUser {
 			userDTO.setIdUser(user.getIdUser());
 			userDTO.setUsername(user.getUsername());
 			userDTO.setPassword(user.getPassword());
-			userDTO.setEmail(user.getEmail());
+			userDTO.setBarcode(user.getBarcode());
+			userDTO.setScode(user.getScode());
 			userDTO.setRuolo(user.getRuolo());
 		}
 		return userDTO;
@@ -28,7 +29,8 @@ public class ConverterUser {
 			user.setIdUser(userDTO.getIdUser());
 			user.setUsername(userDTO.getUsername());
 			user.setPassword(userDTO.getPassword());
-			user.setEmail(userDTO.getEmail());
+			user.setBarcode(userDTO.getBarcode());
+			user.setScode(userDTO.getScode());
 			user.setRuolo(userDTO.getRuolo());
 		}
 		return user;

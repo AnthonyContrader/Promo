@@ -4,9 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Data//permette di accedere ai dati privati di una classe attrraverso un'altra. Fa automaticamente i GET e il SET
+@AllArgsConstructor//crea costruttore con attributi
+@NoArgsConstructor//crea costruttore vuoto
 public class UserDTO {
 
 	private Integer idUser;
@@ -17,5 +17,7 @@ public class UserDTO {
 
 	private String ruolo;
 	
-	private String email;
+	private String barcode;
+	
+	private String scode;
 }
