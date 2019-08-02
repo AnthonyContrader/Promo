@@ -25,8 +25,8 @@ public class Device {
 	private Integer iddevice;
 
 	@ManyToOne
-	@JoinColumn(name = "idclient", referencedColumnName="idclient")
-	private String idclient;
+	@JoinColumn(name = "idclient")
+	private Client idclient;
 	
 	@Column(name = "mac")
 	@NotNull
