@@ -25,7 +25,7 @@ public class Shop {
 	private Integer idshop;
 
 	@ManyToOne
-	@JoinColumn(name = "iduser")
+	@JoinColumn(name = "iduser", referencedColumnName="iduser")
 	private Integer iduser ;
 
 	@Column(name = "name")
