@@ -39,6 +39,10 @@ public class UserService {
 	public boolean insertUser(UserDTO userDTO) {
 		return userRepository.save(ConverterUser.toEntity(userDTO)) != null;
 	}
+	
+	public boolean insertNewUser(UserDTO userDTO) {
+		return userRepository.save(ConverterUser.toEntity(userDTO)) != null;
+	}
 
 	public boolean updateUser(UserDTO userDTO) {
 		return userRepository.save(ConverterUser.toEntity(userDTO)) != null;
