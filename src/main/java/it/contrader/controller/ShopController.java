@@ -19,7 +19,7 @@ import java.util.List;
 public class ShopController {
 
 	private final ShopService shopService;
-	private HttpSession session;
+private HttpSession session;
 	
 	@Autowired//costruttore
 	public ShopController(ShopService shopService) {
@@ -37,10 +37,8 @@ public class ShopController {
 //gestione del shop database
 	@RequestMapping(value = "/shopManagement", method = RequestMethod.GET)
 	public String shopManagement(HttpServletRequest request) {
-		
 		visualShop(request);
-		return "homeshop.jsp";
-		
+		return "homeShop.jsp";
 	}
 //delete del shop
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
@@ -49,7 +47,7 @@ public class ShopController {
 		request.setAttribute("idshop", id);
 		this.shopService.deleteShopById(id);
 		visualShop(request);
-		return "homeshop.jsp";
+		return "homeShop.jsp";
 		
 	}
 //insert del shop 
@@ -57,16 +55,17 @@ public class ShopController {
 	public String insert(HttpServletRequest request) {
 		visualShop(request);
 		request.setAttribute("option", "insert");
-		return "creashop.jsp";
+		return "creaShop.jsp";
 
 	}
+	
 //cerca shop in base al nome
 	@RequestMapping(value = "/cercaShop", method = RequestMethod.GET)
 	public String cercaShopName(HttpServletRequest request) {
 		final String content = request.getParameter("search");
 		List<ShopDTO> allShop = this.shopService.findShopDTObyName(content);
 		request.setAttribute("allShopDTO", allShop);
-		return "homeshop.jsp";
+		return "homeShop.jsp";
 	}
 		
 //cerca shop in base al tipo
@@ -75,7 +74,7 @@ public class ShopController {
 			final String content = request.getParameter("search");
 			List<ShopDTO> allShop = this.shopService.findShopDTObyType(content);
 			request.setAttribute("allShopDTO", allShop);
-			return "homeshop.jsp";
+			return "homeShop.jsp";
 		}
 		
 //insert del shop, ricordare che sul front end c'è da mettere che solo lo usertype=admin può accedere a questa sezione
@@ -95,7 +94,7 @@ public class ShopController {
 		shopService.insertShop(shopObj);
 		
 		visualShop(request);
-		return "homeshop.jsp";
+		return "homeShop.jsp";
 	}
 	
 }
