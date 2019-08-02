@@ -10,5 +10,4 @@ public interface ShopRepository extends CrudRepository<Shop, Integer> {
 
 	public List<Shop> findShopByType(String type);
 	public List<Shop> findAllByName(String name);
-	public List<Shop> findAllByNameandBarcode(String name, String barcode);
 }

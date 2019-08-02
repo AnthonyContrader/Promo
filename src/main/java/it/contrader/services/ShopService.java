@@ -42,14 +42,6 @@ public class ShopService {
 		ShopRepository.deleteById(id);
 	}
 	
-//ottieni dal nome e dal barcode i dati del negozio singolo
-	public List<ShopDTO> findShopDTObyNameandBarcode(String name, String barcode) {
-		final List<Shop> list = ShopRepository.findAllByNameandBarcode(name,barcode);
-		final List<ShopDTO> shopDTOs = new ArrayList<>();
-		list.forEach(i -> shopDTOs.add(ConverterShop.toDTO(i)));
-		return shopDTOs;
-		}
-	
 //ottieni dal nome la lista degli shop
 	public List<ShopDTO> findShopDTObyName(String name) {
 		final List<Shop> list = ShopRepository.findAllByName(name);
@@ -58,7 +50,7 @@ public class ShopService {
 		return shopDTOs;
 		}
 		
-		//ottieni dal tipo la lista degli shop
+//ottieni dal tipo la lista degli shop
 	public List<ShopDTO> findShopDTObyType(String type) {
 		final List<Shop> list = ShopRepository.findAllByName(type);
 		final List<ShopDTO> shopDTOs = new ArrayList<>();

@@ -58,7 +58,7 @@ public class ShopController {
 		visualShop(request);
 		request.setAttribute("option", "insert");
 		return "creashop.jsp";
-		
+
 	}
 //cerca shop in base al nome
 	@RequestMapping(value = "/cercaShop", method = RequestMethod.GET)
@@ -68,17 +68,8 @@ public class ShopController {
 		request.setAttribute("allShopDTO", allShop);
 		return "homeshop.jsp";
 	}
-	
-	//cerca shop in base al nome e barcode
-		@RequestMapping(value = "/cercaShop", method = RequestMethod.GET)
-		public String cercaShopNameandBarcode(HttpServletRequest request) {
-			final String content = request.getParameter("search");
-			List<ShopDTO> allShop = this.shopService.findShopDTObyNameandBarcode(content);
-			request.setAttribute("allShopDTO", allShop);
-			return "homeshop.jsp";
-		}
 		
-		//cerca shop in base al tipo
+//cerca shop in base al tipo
 		@RequestMapping(value = "/cercaShop", method = RequestMethod.GET)
 		public String cercaShopType(HttpServletRequest request) {
 			final String content = request.getParameter("search");
