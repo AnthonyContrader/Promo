@@ -139,7 +139,6 @@ public class UserController {
 		this.userService.deleteUserById(id);
 		visualUser(request);
 		return "user/homeAdmin";
-		
 	}
 	
 	@RequestMapping(value = "/crea", method = RequestMethod.GET)

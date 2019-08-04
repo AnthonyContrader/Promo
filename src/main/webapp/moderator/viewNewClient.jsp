@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Home</title>
+<title>View New Client</title>
 
 <%@ include file="/css/header.jsp" %>
 </head>
@@ -17,24 +17,24 @@
 <body>
 	
 	<div class="container container-center">
-		<h1 class="h3 mb-3 font-weight-normal">Promo: Area Riservata->Registrati</h1>
-		<form action="/User/registerNewUser" method="post">
+		<h1 class="h3 mb-3 font-weight-normal">Inserisci New Client</h1>
+		<form action="/Moderator/insertNewClient" method="post">
+			<label for="idmoderator" class="sr-only">Idmoderator</label> 
+			<input type="number" name="idmoderator" id="idmoderator" class="form-control" placeholder="idmoderator" required autofocus />
 			<label for="username" class="sr-only">Username</label> 
-			<input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus /> 
+			<input type="text" name="username" id="username" class="form-control" placeholder="Username" required /> 
 			<label for="password" class="sr-only">Password</label> 
 			<input type="password" name="password" id="password" class="form-control" placeholder="Password" required> 
-			<label for="usertype" class="sr-only">Usertype</label> 
-			<input type="text" name="usertype" id="usertype" class="form-control" placeholder="Usertype" required>
-			<label for="barcode" class="sr-only">Barcode</label> 
-			<input type="number" min="1" name="barcode" id="barcode" class="form-control" placeholder="Barcode" required>
 			<label for="scode" class="sr-only">Scode</label> 
 			<input type="text" name="scode" id="scode" class="form-control" placeholder="Scode" required>
+			<label for="email" class="sr-only">Email</label> 
+			<input type="text" name="email" id="email" class="form-control" placeholder="Email" required>
+						
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Inserisci</button>
 			
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Registrati</button>
-			<a href="/User/areariservata/">Login</a>
 		</form>
 	</div>
-	
-<%@ include file="/js/scripts.jsp" %>
+
+<%@ include file="/js/scripts.jsp" %>	
 </body>
 </html>

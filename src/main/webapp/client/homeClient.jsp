@@ -12,19 +12,27 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>homeModerator</title>
+<title>Home Client</title>
 
 <%@ include file="/css/header.jsp" %>
+
+<%
+	ClientDTO client = (ClientDTO) request.getAttribute("client");
+%>
 
 </head>
 
 <body>
+
+	
+	<h1>Sono in Home Client</h1>
+	<p>ciao <%=client.getUsername().toUpperCase()%></p>
 	
 	<ul>
-		<li><a href="/Moderator/viewAllClients/">Clients</a></li>
-		<li><a href="/Moderator/viewAllScreens/">Screens</a></li>
+		<li>Profilo</li>
+		<li><a href="/Client/deviceManagement">Device</a></li>
 	</ul>
-
+	
 <%@ include file="/js/scripts.jsp" %>
 </body>
 </html>

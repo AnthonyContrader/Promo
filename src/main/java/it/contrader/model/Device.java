@@ -1,11 +1,7 @@
 package it.contrader.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+
 import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
@@ -16,6 +12,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "device")
+
 public class Device {
 
 	@Id
@@ -23,9 +21,10 @@ public class Device {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer iddevice;
 
-	@ManyToOne
-	@Column(name = "idclient")
-	private String idclient;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "idclient")
+	@NotNull
+	private Client client;
 	
 	@Column(name = "mac")
 	@NotNull

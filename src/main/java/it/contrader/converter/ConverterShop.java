@@ -14,7 +14,7 @@ public class ConverterShop {
 		if (shop != null) {
 			shopDTO = new ShopDTO();
 			shopDTO.setIdshop(shop.getIdshop());
-			shopDTO.setIduser(shop.getIduser());
+			//shopDTO.setIduser(shop.getIduser());
 			shopDTO.setName(shop.getName());
 			shopDTO.setPosition(shop.getPosition());
 			shopDTO.setBarcode(shop.getBarcode());
@@ -29,7 +29,7 @@ public class ConverterShop {
 			shop = new Shop();
 			shopDTO = new ShopDTO();
 			shopDTO.setIdshop(shop.getIdshop());
-			shopDTO.setIduser(shop.getIduser());
+			//shopDTO.setIduser(shop.getIduser());
 			shopDTO.setName(shop.getName());
 			shopDTO.setPosition(shop.getPosition());
 			shopDTO.setType(shop.getType());

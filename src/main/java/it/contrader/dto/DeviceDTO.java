@@ -11,7 +11,8 @@ public class DeviceDTO {
 
 	private Integer iddevice;
 
-	private Integer idclient;
+//	private int idclient;
+	private ClientDTO client;
 	
 	private String mac;
 	

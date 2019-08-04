@@ -14,7 +14,9 @@ public class ConverterDevice {
 		if (device != null) {
 			deviceDTO = new DeviceDTO();
 			deviceDTO.setIddevice(device.getIddevice());
+			deviceDTO.setClient(ConverterClient.toDTO(device.getClient()));
 			deviceDTO.setMac(device.getMac());
+			deviceDTO.setDevtype(device.getDevtype());
 			deviceDTO.setPosition(device.getPosition());
 		}
 		return deviceDTO;
@@ -25,7 +27,9 @@ public class ConverterDevice {
 		if (deviceDTO != null) {
 			device = new Device();
 			device.setIddevice(deviceDTO.getIddevice());
+			device.setClient(ConverterClient.toEntity(deviceDTO.getClient()));
 			device.setMac(deviceDTO.getMac());
+			device.setDevtype(deviceDTO.getDevtype());
 			device.setPosition(deviceDTO.getPosition());
 		}
 		return device;

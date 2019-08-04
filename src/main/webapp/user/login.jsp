@@ -28,6 +28,7 @@
 			<a href="/User/register/">Registrati</a>
 		</form>
 	</div>
-	
+
+<%@ include file="/js/scripts.jsp" %>
 </body>
 </html>

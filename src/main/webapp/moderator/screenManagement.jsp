@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 
 <%@ page import="java.util.List" %>
-<%@	page import="it.contrader.dto.ClientDTO"%>
+<%@	page import="it.contrader.dto.ScreenDTO"%>
 
 <html lang="en">
 <head>
@@ -20,7 +20,7 @@
 
 <body>
 <%
-	List<ClientDTO> listClient = (List<ClientDTO>) request.getAttribute("allClientDTO");
+	List<ScreenDTO> listScreen = (List<ScreenDTO>) request.getAttribute("allScreenDTO");
 %>
 	 <div class="row">
 	 	<div class="col-4">
@@ -32,31 +32,27 @@
 			</div>
 	 	</div>
        	<div class="col-8">
-       		<a href="/Moderator/viewNewClient" type="button" class="btn btn-primary">Inserisci New Client</a>
+       		<a href="/Moderator/viewNewScreen" type="button" class="btn btn-primary">Inserisci New Screen</a>
        		<a href="/User/logout" type="button" class="btn btn-black">Logout</a>
            	<table class="table table-striped">
 				<tr>
-					<th>Idclient</th>
+					<th>Idscreen</th>
 					<th>Idmoderator</th>
-					<th>Username</th>
-					<th>Password</th>
-					<th>Scode</th>
-					<th>Email</th>
+					<th>Output</th>
+					<th>Position</th>
 					<th></th>
 					<th></th>
 				</tr>
 				<%
-					for(ClientDTO client: listClient){
+					for(ScreenDTO screen: listScreen){
 				 %>
 				 	<tr>
-				 		<td><%=client.getIdclient()%></td>
-				 		<td><%=client.getUser().getId()%></td>
-				 		<td><%=client.getUsername()%></td>
-				 		<td><%=client.getPassword()%></td>
-				 		<td><%=client.getScode()%></td>
-				 		<td><%=client.getEmail()%></td>
-				 		<td><a href="/Moderator/viewClientUpdate?idclient=<%=client.getIdclient()%>&idmoderator=<%=client.getUser().getId()%>">Modifica</a></td>
-				 		<td><a href="/Moderator/deleteClient?idclient=<%=client.getIdclient() %>">Cancella</a></td>
+				 		<td><%=screen.getIdscreen()%></td>
+				 		<td><%=screen.getUser().getId()%></td>
+				 		<td><%=screen.getOutput()%></td>
+				 		<td><%=screen.getPosition()%></td>
+				 		<td><a href="/Moderator/viewScreenUpdate?idscreen=<%=screen.getIdscreen()%>&idmoderator=<%=screen.getUser().getId()%>">Modifica</a></td>
+				 		<td><a href="/Moderator/deleteScreen?idscreen=<%=screen.getIdscreen() %>">Cancella</a></td>
 				 	</tr>
 				<% 
 					}

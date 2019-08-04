@@ -3,8 +3,6 @@ package it.contrader.converter;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import it.contrader.dto.ClientDTO;
 import it.contrader.model.Client;
 
