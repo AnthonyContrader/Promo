@@ -21,10 +21,12 @@ public class Device {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer iddevice;
 
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idclient")
 	@NotNull
 	private Client client;
+
 	
 	@Column(name = "mac")
 	@NotNull

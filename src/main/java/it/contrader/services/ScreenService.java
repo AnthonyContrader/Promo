@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 import it.contrader.converter.ConverterScreen;
 import it.contrader.dao.ScreenRepository;
 
@@ -26,6 +25,7 @@ public class ScreenService {
 	public List<ScreenDTO> getListaScreenDTO() {
 		return ConverterScreen.toListDTO((List<Screen>) screenRepository.findAll());
 	}
+
 
 	public ScreenDTO getScreenDTOByIdscreen(Integer idscreen) {
 		return ConverterScreen.toDTO(screenRepository.findById(idscreen).get());
@@ -54,5 +54,5 @@ public class ScreenService {
 	public void deleteScreenById(Integer idscreen) {
 		screenRepository.deleteById(idscreen);
 	}
-	
+
 }
