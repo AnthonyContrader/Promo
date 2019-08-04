@@ -10,14 +10,15 @@ import lombok.NoArgsConstructor;
 public class ShopDTO {
 
 	private int idshop;
-
-	private int iduser;
+	
+	// int idmoderator
+	private UserDTO user;
 	
 	private String name;
+	
+	private String type;
 
 	private String position;
-
-	private String type;
 	
 	private String barcode;
 	

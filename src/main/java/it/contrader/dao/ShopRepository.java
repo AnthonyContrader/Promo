@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface ShopRepository extends CrudRepository<Shop, Integer> {
 
+	public Shop findByIdshop(Integer idshop);
 	public List<Shop> findShopByType(String type);
 	public List<Shop> findAllByName(String name);
 }

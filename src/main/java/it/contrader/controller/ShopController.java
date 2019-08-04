@@ -60,6 +60,7 @@ private HttpSession session;
 	}
 	
 //cerca shop in base al nome
+
 	@RequestMapping(value = "/cercaShop", method = RequestMethod.GET)
 	public String cercaShopName(HttpServletRequest request) {
 		final String content = request.getParameter("search");
@@ -67,15 +68,6 @@ private HttpSession session;
 		request.setAttribute("allShopDTO", allShop);
 		return "homeShop.jsp";
 	}
-		
-//cerca shop in base al tipo
-		@RequestMapping(value = "/cercaShop", method = RequestMethod.GET)
-		public String cercaShopType(HttpServletRequest request) {
-			final String content = request.getParameter("search");
-			List<ShopDTO> allShop = this.shopService.findShopDTObyType(content);
-			request.setAttribute("allShopDTO", allShop);
-			return "homeShop.jsp";
-		}
 		
 //insert del shop, ricordare che sul front end c'è da mettere che solo lo usertype=admin può accedere a questa sezione
 	@RequestMapping(value = "/creaShop", method = RequestMethod.POST)
