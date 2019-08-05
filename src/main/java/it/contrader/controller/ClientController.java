@@ -1,0 +1,138 @@
+package it.contrader.controller;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import it.contrader.dto.ClientDTO;
+import it.contrader.dto.DeviceDTO;
+
+import it.contrader.services.ClientService;
+import it.contrader.services.DeviceService;
+
+@Controller
+@RequestMapping("/Client")
+public class ClientController {
+
+	private final ClientService clientService;
+	private final DeviceService deviceService;
+	private HttpSession session;
+
+	@Autowired
+	public ClientController(ClientService clientService, DeviceService deviceService) {
+		this.clientService = clientService;
+		this.deviceService = deviceService;
+	}
+	
+	@GetMapping("/viewloginClient")
+	public String viewloginClient() {
+		return "client/loginClient";		
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String loginControl(HttpServletRequest request) {
+		session = request.getSession();
+		final String username = request.getParameter("username");
+		final String password = request.getParameter("password");
+		ClientDTO clientDTO = clientService.getByUsernameAndPassword(username, password);
+		if (!StringUtils.isEmpty(username) && !StringUtils.isEmpty(password)) {
+			session.setAttribute("utenteCollegato", clientDTO);
+			if (username.equals(clientDTO.getUsername()) && password.equals(clientDTO.getPassword())) {
+				ClientDTO client = this.clientService.getByUsernameAndPassword(username, password);
+				request.setAttribute("client", client);
+				return "client/homeClient";
+			} 
+		}
+		
+		return "client/loginClient";
+	}
+	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(HttpServletRequest request) {
+		return "index";
+
+	}
+	
+	@GetMapping("/freeEnter")
+	public String freeEnter() {
+		return "client/homeFreeClient";		
+	}
+	
+	//visualizza tutti i device
+	private void visualDevice(HttpServletRequest request){
+		List<DeviceDTO> allDevice = this.deviceService.getListaDeviceDTO();
+		request.setAttribute("allDevice", allDevice);
+	}
+	
+	//gestione del device database
+	@RequestMapping(value = "/deviceManagement", method = RequestMethod.GET)
+	public String deviceManagement(HttpServletRequest request) {
+		visualDevice(request);
+		return "client/deviceManagement";		
+	}
+	
+	@GetMapping("/viewNewDevice")
+	public String viewNewClient() {
+		return "client/viewNewDevice";		
+	}
+	
+	@RequestMapping(value = "/insertNewDevice", method = RequestMethod.POST)
+	public String insertNewDevice(HttpServletRequest request) {
+		Integer idclient = Integer.parseInt(request.getParameter("idclient").toString());
+		ClientDTO client = clientService.getClientDTOById(idclient);
+		String mac = request.getParameter("mac").toString();
+		String devtype = request.getParameter("devtype").toString();
+		String position = request.getParameter("position").toString();
+
+		DeviceDTO device = new DeviceDTO(0, client, mac, devtype, position);
+		
+		deviceService.insertDevice(device);
+
+		visualDevice(request);
+		return "client/deviceManagement";
+	}
+	
+	@RequestMapping(value = "/viewDeviceUpdate", method = RequestMethod.GET)
+	public String viewDeviceUpdate(HttpServletRequest request) {
+		int iddevice = Integer.parseInt(request.getParameter("iddevice"));
+		DeviceDTO device = deviceService.getDeviceDTOById(iddevice);
+		request.setAttribute("device", device);
+		return "client/updateDevice";		
+	}
+	
+	@RequestMapping(value = "/updateDevice", method = RequestMethod.POST)
+	public String updateDevice(HttpServletRequest request) {
+		int iddevice = Integer.parseInt(request.getParameter("iddevice"));
+		int idclient = Integer.parseInt(request.getParameter("idclient"));
+		ClientDTO client = clientService.getClientDTOById(idclient);
+		String macUpdate = request.getParameter("mac");
+		String devtypeUpdate = request.getParameter("devtype");
+		String positionUpdate = request.getParameter("position");
+		
+		final DeviceDTO device = new DeviceDTO(iddevice, client, macUpdate, devtypeUpdate, positionUpdate);
+		device.setIddevice(iddevice);
+		
+		deviceService.updateDevice(device);
+		
+		visualDevice(request);
+		return "client/deviceManagement";	
+	}
+	
+	@RequestMapping(value = "/deleteDevice", method = RequestMethod.GET)
+	public String delete(HttpServletRequest request) {
+		int iddevice = Integer.parseInt(request.getParameter("iddevice"));
+		request.setAttribute("iddevice", iddevice);
+		this.deviceService.deleteDeviceById(iddevice);
+		visualDevice(request);
+		return "client/deviceManagement";
+	}
+	
+}

@@ -13,6 +13,7 @@ public class ConverterScreen {
 		if (screen != null) {
 			screenDTO = new ScreenDTO();
 			screenDTO.setIdscreen(screen.getIdscreen());
+			screenDTO.setUser(ConverterUser.toDTO(screen.getUser()));
 			screenDTO.setOutput(screen.getOutput());
 			screenDTO.setPosition(screen.getPosition());
 		}
@@ -24,6 +25,7 @@ public class ConverterScreen {
 		if (screenDTO != null) {
 			screen = new Screen();
 			screen.setIdscreen(screenDTO.getIdscreen());
+			screen.setUser(ConverterUser.toEntity(screenDTO.getUser()));
 			screen.setOutput(screenDTO.getOutput());
 			screen.setPosition(screenDTO.getPosition());
 		}

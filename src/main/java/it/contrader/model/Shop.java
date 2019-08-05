@@ -1,5 +1,6 @@
 package it.contrader.model;
 
+<<<<<<< HEAD
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -13,6 +14,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+=======
+import javax.persistence.*;
+>>>>>>> b4af5e41d4d632b3d9a83f27bfc4c3f923a8f72d
 import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
@@ -31,6 +35,7 @@ public class Shop {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idshop;
 
+<<<<<<< HEAD
 	//collegamento con user
 	@ManyToOne
 	@JoinColumn(name = "iduser", referencedColumnName="iduser")
@@ -41,6 +46,13 @@ public class Shop {
 	private Set <Catalog> catalog;
 	
 	@Column(name = "nome")
+=======
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "idmoderator")
+	private User user ;
+
+	@Column(name = "name")
+>>>>>>> b4af5e41d4d632b3d9a83f27bfc4c3f923a8f72d
 	@NotNull
 	private String name;
 	

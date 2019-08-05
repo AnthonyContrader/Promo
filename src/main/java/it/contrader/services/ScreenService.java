@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import it.contrader.converter.ConverterScreen;
 import it.contrader.dao.ScreenRepository;
+
 import it.contrader.dto.ScreenDTO;
 import it.contrader.model.Screen;
 
@@ -25,8 +26,17 @@ public class ScreenService {
 		return ConverterScreen.toListDTO((List<Screen>) screenRepository.findAll());
 	}
 
-	public ScreenDTO getScreenDTOById(Integer idscreen) {
+
+	public ScreenDTO getScreenDTOByIdscreen(Integer idscreen) {
 		return ConverterScreen.toDTO(screenRepository.findById(idscreen).get());
+	}
+
+	public List<ScreenDTO> findScreenDTOByOutput(String output) {
+		
+		final List<Screen> list = screenRepository.findAllByOutput(output);
+		final List<ScreenDTO> screenDTOs = new ArrayList<>();
+		list.forEach(i -> screenDTOs.add(ConverterScreen.toDTO(i)));
+		return screenDTOs;
 	}
 
 	public boolean insertScreen(ScreenDTO screenDTO) {
@@ -44,14 +54,5 @@ public class ScreenService {
 	public void deleteScreenById(Integer idscreen) {
 		screenRepository.deleteById(idscreen);
 	}
-	
-	public List<ScreenDTO> findScreenDTOByOutput(String output) {
-		
-		final List<Screen> list = screenRepository.findAllByOutput(output);
-		final List<ScreenDTO> screenDTOs = new ArrayList<>();
-		list.forEach(i -> screenDTOs.add(ConverterScreen.toDTO(i)));
-		return screenDTOs;
-		
-	
-	}
+
 }

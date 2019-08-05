@@ -47,8 +47,23 @@ public class ShopController {
 		return "creaShop";
 
 	}
+<<<<<<< HEAD
 
 //insert dello shop, ricordare che sul front end c'è da mettere che solo lo shoptype=admin può accedere a questa sezione
+=======
+	
+//cerca shop in base al nome
+
+	@RequestMapping(value = "/cercaShop", method = RequestMethod.GET)
+	public String cercaShopName(HttpServletRequest request) {
+		final String content = request.getParameter("search");
+		List<ShopDTO> allShop = this.shopService.findShopDTObyName(content);
+		request.setAttribute("allShopDTO", allShop);
+		return "homeShop.jsp";
+	}
+		
+//insert del shop, ricordare che sul front end c'è da mettere che solo lo usertype=admin può accedere a questa sezione
+>>>>>>> b4af5e41d4d632b3d9a83f27bfc4c3f923a8f72d
 	@RequestMapping(value = "/creaShop", method = RequestMethod.POST)
 	public String insertShop(HttpServletRequest request) {
 		

@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class ClientDTO {
 
 	private int idclient;
-//	
+	
 //	private int idmoderator;
 	private UserDTO user;
 
@@ -22,29 +22,6 @@ public class ClientDTO {
 	
 	private String email;
 	
-//	public int getId() {
-//		return this.idclient;
-//	}
-//	
-//	public void setId(int idclient) {
-//		this.idclient = idclient;
-//	}
-//
-//	public int getIdmoderator() {
-//		return this.idmoderator;
-//	}
-//	
-//	public void setIdmoderator(int idmoderator) {
-//		this.idmoderator = idmoderator;
-//	}
-//	
-//	public String getEmail() {
-//		return this.email;
-//	}
-//
-//	public void setEmail(String email) {
-//		this.email = email;
-//	}
 	
 }
 

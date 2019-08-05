@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>PROMO LOGIN PAGE</title>
+<title>PROMO LOGIN PAGE CLIENT</title>
 
 <!-- Bootstrap core CSS -->
 <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -20,17 +20,19 @@
 
 </head>
 
-<body">
+<body>
 	<div class="container container-center">
-		<h1 class="h3 mb-3 font-weight-normal">Promo LOGIN PAGE</h1>
-		<form action="/User/login" method="post">
+		<h1 class="h3 mb-3 font-weight-normal">Promo: LOGIN CLIENT</h1>
+		<form action="/Client/login" method="post">
 			<label for="username" class="sr-only">Username</label> 
 			<input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus /> 
 			<label for="password" class="sr-only">Password</label> 
 			<input type="password" name="password" id="password" class="form-control" placeholder="Password" required> 
-			<input type="text" name="richiesta" value="login" hidden />
+			
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign	in</button>
 		</form>
 	</div>
+	
+<%@ include file="/js/scripts.jsp" %>
 </body>
 </html>

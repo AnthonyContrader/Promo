@@ -1,7 +1,6 @@
 package it.contrader.converter;
 
 import java.util.ArrayList;
-
 import java.util.List;
 
 import it.contrader.dto.ShopDTO;
@@ -14,10 +13,14 @@ public class ConverterShop {
 		if (shop != null) {
 			shopDTO = new ShopDTO();
 			shopDTO.setIdshop(shop.getIdshop());
+<<<<<<< HEAD
+=======
+			shopDTO.setUser(ConverterUser.toDTO(shop.getUser()));
+>>>>>>> b4af5e41d4d632b3d9a83f27bfc4c3f923a8f72d
 			shopDTO.setName(shop.getName());
+			shopDTO.setType(shop.getType());
 			shopDTO.setPosition(shop.getPosition());
 			shopDTO.setBarcode(shop.getBarcode());
-			shopDTO.setType(shop.getType());
 		}
 		return shopDTO;
 	}
@@ -27,9 +30,16 @@ public class ConverterShop {
 		if (shopDTO != null) {
 			shop = new Shop();
 			shop.setIdshop(shopDTO.getIdshop());
+<<<<<<< HEAD
 			shop.setName(shopDTO.getName());
 			shop.setPosition(shopDTO.getPosition());
 			shop.setType(shopDTO.getType());
+=======
+			shop.setUser(ConverterUser.toEntity(shopDTO.getUser()));
+			shop.setName(shopDTO.getName());
+			shop.setType(shopDTO.getType());
+			shop.setPosition(shopDTO.getPosition());
+>>>>>>> b4af5e41d4d632b3d9a83f27bfc4c3f923a8f72d
 			shop.setBarcode(shopDTO.getBarcode());			
 		}
 		return shop;

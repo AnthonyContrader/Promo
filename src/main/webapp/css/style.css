@@ -1,0 +1,17 @@
+.container-index {
+	position: relative;
+	top: 25%;
+	left: 35%;
+	width: 30%;
+	font-size: 3em;
+	//border: 2px solid lime;
+}
+
+.client-login-index {
+	margin-left: 5em;
+	margin-bottom: 3em;
+}
+
+.user-areariservata a {
+	font-size: 1.5em;
+}

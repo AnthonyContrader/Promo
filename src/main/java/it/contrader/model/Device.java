@@ -1,6 +1,7 @@
 package it.contrader.model;
 
 import javax.persistence.*;
+
 import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
@@ -11,26 +12,31 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Screen {
-	
+@Table(name = "device")
+
+public class Device {
+
 	@Id
-	@Column(name = "idscreen")
+	@Column(name = "iddevice")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idscreen;
+	private Integer iddevice;
+
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idmoderator")
+	@JoinColumn(name = "idclient")
 	@NotNull
-	private User user;
+	private Client client;
+
 	
-	@Column(name = "output")
+	@Column(name = "mac")
 	@NotNull
-	private String output;
-	
+	private String mac;
+
+	@Column(name = "devtype")
+	@NotNull
+	private String devtype;
+
+	@NotNull
 	@Column(name = "position")
-	@NotNull
 	private String position;
-	
-	
-	
 }

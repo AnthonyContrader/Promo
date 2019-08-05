@@ -12,7 +12,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>homeModerator</title>
+<title>Home Client</title>
 
 <%@ include file="/css/header.jsp" %>
 
@@ -20,10 +20,8 @@
 
 <body>
 	
-	<ul>
-		<li><a href="/Moderator/viewAllClients/">Clients</a></li>
-		<li><a href="/Moderator/viewAllScreens/">Screens</a></li>
-	</ul>
+	<h1>Sono in Home Free Client</h1>
+	<p>Benvenuto!</p>
 
 <%@ include file="/js/scripts.jsp" %>
 </body>

@@ -25,5 +25,7 @@
     </div>
 </nav>
 <h1>Progetto METABOT</h1>
+
+<%@ include file="/js/scripts.jsp" %>
 </body>
 </html>

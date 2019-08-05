@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface ScreenRepository extends CrudRepository<Screen, Integer> {
 
-	public Screen findScreenById(Integer idscreen);
+	public Screen findByIdscreen(Integer idscreen);
 	public List<Screen> findAllByOutput(String output);
 }

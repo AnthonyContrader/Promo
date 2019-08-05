@@ -10,6 +10,9 @@ import lombok.NoArgsConstructor;
 public class ScreenDTO {
 
 	private Integer idscreen;
+	
+	// int idmoderator
+	private UserDTO user; 
 
 	private String output;
 	
