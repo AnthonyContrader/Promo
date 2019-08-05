@@ -1,5 +1,6 @@
 package it.contrader.dto;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,16 +8,16 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DeviceDTO {
+public class CatalogDTO {
 
-	private Integer iddevice;
+	private Integer idcatalog;
 
-	private Integer idclient;
+	private Integer idshop;
 	
-	private String mac;
-	
-	private String devtype;
+	private String name;
 
-	private String position;
-	
+	private String type;
+
+	private String price;
+		
 }

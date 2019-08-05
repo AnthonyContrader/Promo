@@ -151,12 +151,9 @@ public class UserController {
 	
 	@RequestMapping(value = "/cercaUser", method = RequestMethod.GET)
 	public String cercaUser(HttpServletRequest request) {
-
 		final String content = request.getParameter("search");
-
 		List<UserDTO> allUser = this.userService.findUserDTOByUsername(content);
 		request.setAttribute("allUserDTO", allUser);
-
 		return "homeAdmin";
 
 	}

@@ -52,7 +52,7 @@ public class ShopService {
 		
 //ottieni dal tipo la lista degli shop
 	public List<ShopDTO> findShopDTObyType(String type) {
-		final List<Shop> list = ShopRepository.findAllByName(type);
+		final List<Shop> list = ShopRepository.findShopByType(type);
 		final List<ShopDTO> shopDTOs = new ArrayList<>();
 		list.forEach(i -> shopDTOs.add(ConverterShop.toDTO(i)));
 		return shopDTOs;

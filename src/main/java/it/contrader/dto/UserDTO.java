@@ -17,7 +17,7 @@ public class UserDTO {
 
 	private String usertype;
 	
-	private Integer barcode;
+	private int barcode;
 	
 	private String scode;
 	

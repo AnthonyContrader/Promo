@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ShopDTO {
 
-	private int idshop;
+	private Integer idshop;
 
-	private int iduser;
+	private Integer iduser;
 	
 	private String name;
 
@@ -20,5 +20,4 @@ public class ShopDTO {
 	private String type;
 	
 	private String barcode;
-	
 }
