@@ -13,9 +13,11 @@
 <title>PROMO LOGIN PAGE</title>
 
 <style>
+
 	body {
-		background: url('/img/city-1150026_1280.jpg');
+		background: url('/img/sfondo_template_3.jpg');
 	}
+	
 </style>
 
 <%@ include file="/css/header.jsp" %>
@@ -23,18 +25,23 @@
 </head>
 
 <body>
+
 	<div class="user-areariservata float-right mr-5 mt-5">
-		<a href="/User/areariservata/" class="text-danger"><i class="fas fa-lock fa-2x text-danger"></i></a>
+		<a href="/User/areariservata/"><i class="fas fa-lock fa-2x text-dark" title="Area Riservata"></i></a>
 	</div>
 	
 	<div class="container-index">
 		<div class="client-login-index">
-			<a href="/Client/viewloginClient/" class="text-white">Login</a>
+			<a href="/Client/viewloginClient/" class="text-danger font-weight-bold">Login</a>
 		</div>
-		<div class="client-freeEnter-index">
-			 <a href="/Client/freeEnter" class="text-white">Entra</a>
+		<div class="client-freeEnter-index mb-4">
+			 <a href="/Client/freeEnter" class="text-white font-weight-bold">Entra</a>
+		</div>
+		<div class="title-index">
+			<h1 class="text-danger">PROMO</h1>
 		</div>
 	</div>
+	
 
 <%@ include file="/js/scripts.jsp" %>
 

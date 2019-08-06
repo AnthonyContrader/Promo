@@ -10,27 +10,44 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>PROMO LOGIN PAGE CLIENT</title>
+<title>PROMO LOGIN CLIENT</title>
 
-<!-- Bootstrap core CSS -->
-<link href="/css/bootstrap.min.css" rel="stylesheet">
+<%@ include file="/css/header.jsp" %>
 
-<!-- Custom styles for this template -->
-<link href="/css/style.css" rel="stylesheet">
+<style>
+
+	body {
+		background: url('/img/sfondo_template_2.jpg');
+	}
+	
+</style>
 
 </head>
 
 <body>
-	<div class="container container-center">
-		<h1 class="h3 mb-3 font-weight-normal">Promo: LOGIN CLIENT</h1>
+	<div class="container-login ml-4 mt-4">
+		<h1 class="h3 mb-3 font-weight-normal text-white">Promo: LOGIN CLIENT</h1>
 		<form action="/Client/login" method="post">
 			<label for="username" class="sr-only">Username</label> 
-			<input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus /> 
+			<input type="text" name="username" id="username" class="form-control mb-2" placeholder="Username" required autofocus /> 
 			<label for="password" class="sr-only">Password</label> 
-			<input type="password" name="password" id="password" class="form-control" placeholder="Password" required> 
+			<input type="text" name="password" id="password" class="form-control" placeholder="Password" required> 
 			
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign	in</button>
+			<div class="container-submit-login my-3">
+				<button class="btn btn-lg btn-outline-danger" type="submit">Sign in</button>
+			</div>
+			<div class="d-flex justify-content-between">
+				<button onclick="goBack()" type="button" class="btn" title="Indietro">
+					<i class="fas fa-arrow-left fa-2x text-white"></i>
+				</button>
+			</div>
 		</form>
+	</div>
+	
+	<div class="container-index">
+		<div class="title-index">
+			<h1 class="text-danger">PROMO</h1>
+		</div>
 	</div>
 	
 <%@ include file="/js/scripts.jsp" %>

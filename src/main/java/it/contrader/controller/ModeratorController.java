@@ -12,11 +12,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import it.contrader.dto.ClientDTO;
 import it.contrader.dto.ScreenDTO;
+import it.contrader.dto.ShopDTO;
 import it.contrader.dto.UserDTO;
 
 import it.contrader.services.ClientService;
 import it.contrader.services.UserService;
 import it.contrader.services.ScreenService;
+import it.contrader.services.ShopService;
 
 import java.util.List;
 
@@ -28,16 +30,23 @@ public class ModeratorController {
 	
 	private final ScreenService screenService;
 	
+	private final ShopService shopService;
+	
 	private final UserService userService;
 	
 	
 	@Autowired
-	public ModeratorController(ClientService clientService, ScreenService screenService, UserService userService) {
+	public ModeratorController(ClientService clientService, ScreenService screenService, ShopService shopService, UserService userService) {
 		this.clientService = clientService;
 		this.screenService = screenService;
+		this.shopService = shopService;
 		this.userService = userService;
 	}
 
+	/*
+	 *  Gestione Client ***
+	*/
+	
 	private void visualClient(HttpServletRequest request){
 		List<ClientDTO> allClient = this.clientService.getListaClientDTO();
 		request.setAttribute("allClientDTO", allClient);
@@ -176,5 +185,77 @@ public class ModeratorController {
 		return "moderator/screenManagement";
 	}
 	
+	/* 
+	 *	Gestione Shop	**
+	*/
+	
+	private void visualShop(HttpServletRequest request){
+		List<ShopDTO> allShop = this.shopService.getListaShopDTO();
+		request.setAttribute("allShopDTO", allShop);
+	}
+	
+	@RequestMapping(value = "/viewAllShops", method = RequestMethod.GET)
+	public String viewAllShops(HttpServletRequest request) {
+		visualShop(request);
+		return "moderator/shopManagement";		
+	}
+	
+	@GetMapping("/viewNewShop")
+	public String viewNewShop() {
+		return "moderator/viewNewShop";		
+	}
+	
+	@RequestMapping(value = "/insertNewShop", method = RequestMethod.POST)
+	public String insertNewShop(HttpServletRequest request) {
+		Integer idmoderator = Integer.parseInt(request.getParameter("idmoderator").toString());
+		UserDTO moderator = userService.getUserDTOById(idmoderator);
+		String name = request.getParameter("name").toString();
+		String type = request.getParameter("type").toString();
+		String position = request.getParameter("position").toString();
+		String barcode = request.getParameter("barcode").toString();
+
+		ShopDTO shopObj = new ShopDTO(0, moderator, name, type, position, barcode);
+		
+		shopService.insertShop(shopObj);
+
+		visualShop(request);
+		return "moderator/shopManagement";
+	}
+	
+	@RequestMapping(value = "/viewShopUpdate", method = RequestMethod.GET)
+	public String viewShopUpdate(HttpServletRequest request) {
+		int idshop = Integer.parseInt(request.getParameter("idshop"));
+		ShopDTO shop = shopService.getShopDTOById(idshop);
+		request.setAttribute("shop", shop);
+		return "moderator/updateShop";		
+	}
+	
+	@RequestMapping(value = "/updateShop", method = RequestMethod.POST)
+	public String updateShop(HttpServletRequest request) {
+		int idshop = Integer.parseInt(request.getParameter("idshop"));
+		int idmoderator = Integer.parseInt(request.getParameter("idmoderator"));
+		UserDTO moderator = userService.getUserDTOById(idmoderator);
+		String nameUpdate = request.getParameter("name");
+		String typeUpdate = request.getParameter("type");
+		String positionUpdate = request.getParameter("position");
+		String barcodeUpdate = request.getParameter("barcode");
+		
+		final ShopDTO shop = new ShopDTO(idshop, moderator, nameUpdate, typeUpdate, positionUpdate, barcodeUpdate);
+		shop.setIdshop(idshop);
+		
+		shopService.updateShop(shop);
+		
+		visualShop(request);
+		return "moderator/shopManagement";	
+	}
+	
+	@RequestMapping(value = "/deleteShop", method = RequestMethod.GET)
+	public String deleteShop(HttpServletRequest request) {
+		int idshop = Integer.parseInt(request.getParameter("idshop"));
+		request.setAttribute("idshop", idshop);
+		this.shopService.deleteShopById(idshop);
+		visualShop(request);
+		return "moderator/shopManagement";
+	}
 
 }

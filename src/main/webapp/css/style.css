@@ -1,6 +1,6 @@
 .container-index {
 	position: relative;
-	top: 25%;
+	top: 20%;
 	left: 35%;
 	width: 30%;
 	font-size: 3em;
@@ -14,4 +14,54 @@
 
 .user-areariservata a {
 	font-size: 1.5em;
+}
+
+.title-index h1 {
+	font-size: 2em;
+}
+
+.container-login {
+	width: 40%;
+}
+
+.container-login input[type=text], .container-login input[type=number] {
+  border: none;
+  border-bottom: 2px solid #C1272D;
+} 
+
+.container-login .form-control, .container-login .form-control:focus {
+	background-color: transparent;
+	color: red;
+}
+
+.form-control:focus {
+	outline-style: solid;
+	box-shadow:none;
+	 border-bottom: 2px solid white !important;
+}
+
+.container-submit-login  {
+	text-align: center;
+}
+
+ .trapezoid {
+  border-bottom: 100px solid #C1272D;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  height: 0;
+  width: 100px;
+}
+
+.transform {
+	-ms-transform: rotate(20deg); /* IE 9 */
+  	-webkit-transform: rotate(20deg); /* Safari 3-8 */
+  	transform: rotate(20deg);	
+}
+
+.hamburger-round {
+	  width: 7px;
+      height: 7px;
+      background: #C1272D;
+      border-radius: 50%
+ 
 }

@@ -66,21 +66,20 @@ public class ClientController {
 		return "client/homeFreeClient";		
 	}
 	
-	//visualizza tutti i device
 	private void visualDevice(HttpServletRequest request){
 		List<DeviceDTO> allDevice = this.deviceService.getListaDeviceDTO();
 		request.setAttribute("allDevice", allDevice);
 	}
 	
-	//gestione del device database
 	@RequestMapping(value = "/deviceManagement", method = RequestMethod.GET)
 	public String deviceManagement(HttpServletRequest request) {
 		visualDevice(request);
+		
 		return "client/deviceManagement";		
 	}
 	
 	@GetMapping("/viewNewDevice")
-	public String viewNewClient() {
+	public String viewNewDevice() {
 		return "client/viewNewDevice";		
 	}
 	

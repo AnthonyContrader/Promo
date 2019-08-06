@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 
 <%@ page import="java.util.List" %>
-<%@	page import="it.contrader.dto.ClientDTO"%>
+<%@	page import="it.contrader.dto.ShopDTO"%>
 
 <html lang="en">
 <head>
@@ -12,7 +12,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Moderator Management</title>
+<title>Home Shop</title>
 
 <%@ include file="/css/header.jsp" %>
 
@@ -20,9 +20,9 @@
 
 <body>
 <%
-	List<ClientDTO> listClient = (List<ClientDTO>) request.getAttribute("allClientDTO");
+	List<ShopDTO> listShop = (List<ShopDTO>) request.getAttribute("allShopDTO");
 %>
-	 <div class="row" style="height: 100%;">
+	<div class="row" style="height: 100%;">
 	 	<div class="col-3 p-3" style="background-color: #C1272D;">
 	 		<div class="media">
 			  <i class="fas fa-user-circle fa-5x ml-1 text-white"></i>
@@ -34,9 +34,13 @@
 				<button onclick="goBack()" type="button" class="btn" title="Indietro">
 					<i class="fas fa-arrow-left fa-2x text-white"></i>
 				</button>
-				<a href="/Moderator/viewNewClient" ><i class="fas fa-plus-circle fa-2x text-white"></i></a>
-       			<a href="/User/logout" ><i class="fas fa-sign-out-alt fa-2x text-white"></i></a>
-       		</div>
+			   	<a href="/Moderator/viewNewShop" title="Inserisci New Shop">
+			   		<i class="fas fa-plus-circle fa-2x text-white"></i>
+			   	</a>
+       			<a href="/User/logout" title="Logout">
+       				<i class="fas fa-sign-out-alt fa-2x text-white"></i>
+       			</a>	
+	 		</div>
 	 	</div>
        	<div class="col-9 p-3">
        		<div class="d-flex">
@@ -54,30 +58,30 @@
        			<div class="hamburger-round mr-1 mb-1"></div>
        			<div class="hamburger-round mr-1 mb-1"></div>
 			</div>
-			<div class="mt-5" style="width: 95%;">
+			<div style="width: 95%;" class="mt-5">
 	           	<table class="table table-striped">
 					<tr>
-						<th>Idclient</th>
+						<th>Idshop</th>
 						<th>Idmoderator</th>
-						<th>Username</th>
-						<th>Password</th>
-						<th>Scode</th>
-						<th>Email</th>
+						<th>Name</th>
+						<th>Type</th>
+						<th>Position</th>
+						<th>Barcode</th>
 						<th></th>
 						<th></th>
 					</tr>
 					<%
-						for(ClientDTO client: listClient){
+						for(ShopDTO shop: listShop){
 					 %>
 					 	<tr>
-					 		<td><%=client.getIdclient()%></td>
-					 		<td><%=client.getUser().getId()%></td>
-					 		<td><%=client.getUsername()%></td>
-					 		<td><%=client.getPassword()%></td>
-					 		<td><%=client.getScode()%></td>
-					 		<td><%=client.getEmail()%></td>
-					 		<td><a href="/Moderator/viewClientUpdate?idclient=<%=client.getIdclient()%>&idmoderator=<%=client.getUser().getId()%>"><i class="fas fa-edit fa-2x text-warning"></i></a></td>
-					 		<td><a href="/Moderator/deleteClient?idclient=<%=client.getIdclient() %>"><i class="fas fa-trash fa-2x text-danger"></i></a></td>
+					 		<td><%=shop.getIdshop()%></td>
+					 		<td><%=shop.getUser().getId()%></td>
+					 		<td><%=shop.getName()%></td>
+					 		<td><%=shop.getType()%></td>
+					 		<td><%=shop.getPosition()%></td>
+					 		<td><%=shop.getBarcode()%></td>
+					 		<td><a href="/Moderator/viewShopUpdate?idshop=<%=shop.getIdshop()%>&idmoderator=<%=shop.getUser().getId()%>" title="Modifica"><i class="fas fa-edit fa-2x text-warning"></i></a></td>
+					 		<td><a href="/Moderator/deleteShop?idshop=<%=shop.getIdshop() %>" title="Cancella"><i class="fas fa-trash fa-2x text-danger"></i></a></td>
 					 	</tr>
 					<% 
 						}

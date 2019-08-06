@@ -9,30 +9,53 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Home</title>
+<title>Register User</title>
 
 <%@ include file="/css/header.jsp" %>
+
+<style>
+
+	body {
+		background: url('/img/sfondo_template_2.jpg');
+	}
+	
+</style>
+
 </head>
 
 <body>
 	
-	<div class="container container-center">
-		<h1 class="h3 mb-3 font-weight-normal">Promo: Area Riservata->Registrati</h1>
+	<div class="container-login ml-4 mt-4">
+		<h1 class="h3 mb-3 font-weight-normal text-white">Promo: Area Riservata->Registrati</h1>
 		<form action="/User/registerNewUser" method="post">
 			<label for="username" class="sr-only">Username</label> 
-			<input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus /> 
+			<input type="text" name="username" id="username" class="form-control mb-2" placeholder="Username" required autofocus /> 
 			<label for="password" class="sr-only">Password</label> 
-			<input type="password" name="password" id="password" class="form-control" placeholder="Password" required> 
+			<input type="text" name="password" id="password" class="form-control mb-2" placeholder="Password" required> 
 			<label for="usertype" class="sr-only">Usertype</label> 
-			<input type="text" name="usertype" id="usertype" class="form-control" placeholder="Usertype" required>
+			<input type="text" name="usertype" id="usertype" class="form-control mb-2" placeholder="Usertype" required>
 			<label for="barcode" class="sr-only">Barcode</label> 
-			<input type="number" min="1" name="barcode" id="barcode" class="form-control" placeholder="Barcode" required>
+			<input type="number" min="1" name="barcode" id="barcode" class="form-control mb-2" placeholder="Barcode" required>
 			<label for="scode" class="sr-only">Scode</label> 
-			<input type="text" name="scode" id="scode" class="form-control" placeholder="Scode" required>
+			<input type="text" name="scode" id="scode" class="form-control mb-2" placeholder="Scode" required>
 			
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Registrati</button>
-			<a href="/User/areariservata/">Login</a>
+			<div class="container-submit-login my-3">
+				<button class="btn btn-lg btn-outline-danger" type="submit">Registrati</button>
+			</div>
+			<a href="/User/areariservata/" class="text-white">Login</a>
 		</form>
+	</div>
+	
+	<div class="container-index">
+		<div class="client-login-index">
+			<a href="/Client/viewloginClient/" class="text-dark font-weight-bold">Login</a>
+		</div>
+		<div class="client-freeEnter-index mb-4">
+			 <a href="/Client/freeEnter" class="text-danger font-weight-bold">Entra</a>
+		</div>
+		<div class="title-index">
+			<h1 class="text-danger">PROMO</h1>
+		</div>
 	</div>
 	
 <%@ include file="/js/scripts.jsp" %>

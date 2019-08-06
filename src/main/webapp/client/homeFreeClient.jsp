@@ -20,8 +20,38 @@
 
 <body>
 	
-	<h1>Sono in Home Free Client</h1>
-	<p>Benvenuto!</p>
+	<div class="row" style="height: 100%;">
+	 	<div class="col-3 p-3" style="background-color: #C1272D;">
+	 		<div class="media">
+			  <i class="fas fa-user-circle fa-5x ml-1 text-white"></i>
+			  <div class="media-body ml-1">
+			    <h5 class="mt-0 text-white">Benvenuto!</h5>
+			  </div>
+			</div>	
+		
+			<button onclick="goBack()" type="button" class="btn" title="Indietro">
+				<i class="fas fa-arrow-left fa-2x text-white"></i>
+			</button>
+		</div>
+		
+		<div class="col-9 p-3">
+       		<div class="d-flex">
+       			<div class="hamburger-round mr-1 mb-1"></div>
+       			<div class="hamburger-round mr-1 mb-1"></div>
+       			<div class="hamburger-round mr-1 mb-1"></div>
+       		</div>
+			<div class="d-flex">
+				<div class="hamburger-round mr-1 mb-1"></div>
+       			<div class="hamburger-round mr-1 mb-1"></div>
+       			<div class="hamburger-round mr-1 mb-1"></div>
+			</div>
+			<div class="d-flex">
+				<div class="hamburger-round mr-1 mb-1"></div>
+       			<div class="hamburger-round mr-1 mb-1"></div>
+       			<div class="hamburger-round mr-1 mb-1"></div>
+			</div>
+		</div>
+	</div>
 
 <%@ include file="/js/scripts.jsp" %>
 </body>

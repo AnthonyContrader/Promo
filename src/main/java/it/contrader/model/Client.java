@@ -40,22 +40,5 @@ public class Client {
 	@Column(name = "email")
 	private String email;
 
-	
-//	public int getId() {
-//		return this.idclient;
-//	}
-//	
-//	public void setId(int idclient) {
-//		this.idclient = idclient;
-//	}
-//	
-//	public String getEmail() {
-//		return this.email;
-//	}
-//
-//	public void setEmail(String email) {
-//		this.email = email;
-//	}
-
 }
 

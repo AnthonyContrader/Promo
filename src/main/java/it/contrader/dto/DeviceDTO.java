@@ -7,20 +7,17 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ShopDTO {
+public class DeviceDTO {
 
+	private Integer iddevice;
 
-	private Integer idshop;
+//	private int idclient;
+	private ClientDTO client;
 	
-	// int idmoderator
-	private UserDTO user;
-
+	private String mac;
 	
-	private String name;
-	
-	private String type;
+	private String devtype;
 
 	private String position;
 	
-	private String barcode;
 }
