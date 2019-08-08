@@ -1,16 +1,32 @@
+
+
 <div class="container-fluid">
+
+    <div class="imagelogo"> 
+        <img src="../../assets/img/Promo-10.svg" alt="logo" width="350" > 
+        </div>
+
   <div class="row">
     <div class="col-md-7">
-      <img src="../../assets/logo.svg" alt="logo">
+      
+      <a type="button" routerLink="/free">Free entry</a>
+
     </div>
     <div class="col-md-5">
       <form #f="ngForm">
-        <p>Please insert username and password to Login or Sign Up</p>
+        <p>Inserisci username e password</p>
         <div class="form-group">
           <input class="form-control" type="text" id="user" name="username" placeholder="Username" ngModel>
         </div>
         <div class="form-group">
           <input class="form-control" type="password" id="pass" name="password" placeholder="Password" ngModel>
+        </div>
+        <div class="form-group">
+          <select>
+            <option>ADMIN</option>
+            <option>MODERATOR</option>
+            
+         </select>
         </div>
         <button type="submit" (click)="login(f)">Login</button>
         <button type="submit">Sign Up</button>

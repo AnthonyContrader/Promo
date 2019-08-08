@@ -7,6 +7,11 @@ import { LoginModule } from './login/login.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from './layout/layout.module';
 import { AdminModule } from './admin/admin.module';
+import { FreeModule } from './free/free.module';
+import { HomepageModule } from './homepage/homepage.module';
+import { AreariservataModule } from './areariservata/areariservata.module';
+
+
 
 /** 
  * Modulo principale dell'applicazione. Qui vengono importati i moduli secondari. L'UNICA component
@@ -17,7 +22,10 @@ import { AdminModule } from './admin/admin.module';
 */
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -25,7 +33,13 @@ import { AdminModule } from './admin/admin.module';
     LoginModule,
     HttpClientModule,
     LayoutModule,
-    AdminModule
+    AdminModule,
+    FreeModule,
+    HomepageModule,
+    AreariservataModule,
+    
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

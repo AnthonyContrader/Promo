@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './login.component';
-import { LoginRoutingModule } from './login-routing.module';
+import { FreeComponent } from './free.component';
+import { FreeRoutingModule } from './free-routing.module';
 import { FormsModule } from '@angular/forms';
 
 /**
@@ -11,13 +11,13 @@ import { FormsModule } from '@angular/forms';
  * @author Vittorio Valent
  */
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [FreeComponent],
 
   imports: [
     CommonModule,
-    LoginRoutingModule,
-    FormsModule,
+    FreeRoutingModule,
+    FormsModule
   ]
   
 })
-export class LoginModule { }
+export class FreeModule { }
