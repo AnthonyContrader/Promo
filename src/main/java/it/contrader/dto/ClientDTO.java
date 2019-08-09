@@ -7,18 +7,21 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDTO {
+public class ClientDTO {
 
-	private Integer id;
+	private int idclient;
+	
+//	private int idmoderator;
+	private UserDTO user;
 
 	private String username;
 	
 	private String password;
 
-	private String usertype;
-	
-	private int barcode;
-	
 	private String scode;
 	
+	private String email;
+	
+	
 }
+
