@@ -28,5 +28,9 @@ public class UserDTO {
 
 	private Usertype usertype;
 	
+	private int barcode;
+	
+	private String scode;
+	
 
 }

@@ -3,9 +3,6 @@ package it.contrader.model;
 import javax.persistence.Entity;
 
 import javax.persistence.*;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,7 +25,7 @@ public class User {
 	
 	public enum Usertype {
 		ADMIN,
-		USER
+		MODERATOR
 	}
 
 	@Id
@@ -42,4 +39,7 @@ public class User {
 
 	private Usertype usertype;
 	
+	private int barcode;
+	
+	private String scode;
 }
