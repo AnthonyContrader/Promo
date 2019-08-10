@@ -10,6 +10,8 @@ import { AdminModule } from './admin/admin.module';
 import { FreeModule } from './free/free.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { AreariservataModule } from './areariservata/areariservata.module';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -37,7 +39,7 @@ import { AreariservataModule } from './areariservata/areariservata.module';
     FreeModule,
     HomepageModule,
     AreariservataModule,
-    
+    FormsModule,
     
 
   ],
