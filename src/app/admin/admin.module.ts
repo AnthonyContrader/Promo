@@ -19,7 +19,7 @@ import { UsersComponent } from './users/users.component';
   imports: [
     CommonModule,
     AdminRoutingModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class AdminModule { }

@@ -62,4 +62,10 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
  * APPLICATION IMPORTS
  */
 
- import '@fortawesome/fontawesome-free/js/all.min.js';  // Import Fontawesome Icons
+import 'jquery/dist/jquery.min.js';
+
+import 'popper.js/dist/popper.min.js';
+
+import 'bootstrap/dist/js/bootstrap.min.js';
+
+import '@fortawesome/fontawesome-free/js/all.min.js';  // Import Fontawesome Icons
