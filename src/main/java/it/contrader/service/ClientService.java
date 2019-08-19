@@ -1,4 +1,4 @@
-/*
+
 package it.contrader.service;
 
 import java.util.ArrayList;
@@ -61,4 +61,3 @@ public class ClientService {
 		return clientDTOs;
 	}
 }
-*/

@@ -19,10 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import it.contrader.dto.ClientDTO;
 import it.contrader.dto.DeviceDTO;
-/*
+
 import it.contrader.service.ClientService;
 import it.contrader.service.DeviceService;
-*/
+
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/Client")
@@ -32,13 +32,13 @@ public class ClientController {
 	private final DeviceService deviceService;
 	private HttpSession session;*/
 	
-	/*
+	
 	@Autowired
 	ClientService clientService;
 	
 	@Autowired
 	DeviceService deviceService;
-	*/
+	
 	
 	/*@Autowired
 	public ClientController(ClientService clientService, DeviceService deviceService) {
@@ -53,12 +53,12 @@ public class ClientController {
 		return clientService;		
 	}*/
 	
-	/*
+	
 	@PostMapping(value = "/loginClient")
 	public ClientDTO login(@RequestParam("username") String username, @RequestParam("password") String password) {
 		return(clientService.getByUsernameAndPassword(username, password));
 	}
-	*/
+	
 	
 	/*@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpServletRequest request) {

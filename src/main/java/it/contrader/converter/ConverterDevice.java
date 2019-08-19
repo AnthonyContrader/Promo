@@ -1,4 +1,4 @@
-/*
+
 package it.contrader.converter;
 
 import java.util.ArrayList;
@@ -56,4 +56,3 @@ public class ConverterDevice {
 		return list;
 	}
 }
-*/

@@ -1,4 +1,4 @@
-/*
+
 package it.contrader.converter;
 
 import java.util.ArrayList;
@@ -57,4 +57,3 @@ public class ConverterClient {
 		return list;
 	}
 }
-*/

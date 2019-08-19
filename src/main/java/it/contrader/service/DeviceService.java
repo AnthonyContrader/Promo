@@ -1,4 +1,4 @@
-/*
+
 package it.contrader.service;
 
 import java.util.ArrayList;
@@ -57,6 +57,5 @@ public class DeviceService {
 		return deviceDTOs;
 		
 	
-	}
+	}*/
 }
-*/
