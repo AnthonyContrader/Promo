@@ -11,7 +11,10 @@ import { FreeModule } from './free/free.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { AreariservataModule } from './areariservata/areariservata.module';
 import { FormsModule } from '@angular/forms';
+
 import { ModeratorModule } from './moderator/moderator.module';
+
+import { RegisteruserModule } from './registeruser/registeruser.module';
 
 
 
@@ -25,9 +28,7 @@ import { ModeratorModule } from './moderator/moderator.module';
 */
 @NgModule({
   declarations: [
-    AppComponent,
-    
-    
+    AppComponent   
     
   ],
   imports: [
@@ -41,8 +42,13 @@ import { ModeratorModule } from './moderator/moderator.module';
     HomepageModule,
     AreariservataModule,
     FormsModule,
+
     ModeratorModule,
     
+
+    RegisteruserModule,
+   
+
 
   ],
   providers: [],

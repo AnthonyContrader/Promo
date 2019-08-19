@@ -18,5 +18,9 @@ export class UserDTO {
 
    usertype: Usertype;
 
+   barcode: number;
+
+   scode: string;
+
 }
 
