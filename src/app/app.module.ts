@@ -11,6 +11,7 @@ import { FreeModule } from './free/free.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { AreariservataModule } from './areariservata/areariservata.module';
 import { FormsModule } from '@angular/forms';
+import { ModeratorModule } from './moderator/moderator.module';
 
 
 
@@ -40,6 +41,7 @@ import { FormsModule } from '@angular/forms';
     HomepageModule,
     AreariservataModule,
     FormsModule,
+    ModeratorModule,
     
 
   ],

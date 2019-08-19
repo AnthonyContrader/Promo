@@ -32,7 +32,7 @@ export class AreariservataComponent implements OnInit {
             break;
           }
           case 'MODERATOR': {
-            this.router.navigate(['/admin-dashboard']);
+            this.router.navigate(['/moderator-dashboard']);
             break;
           }
           default:
