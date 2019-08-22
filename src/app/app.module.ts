@@ -15,6 +15,10 @@ import { FormsModule } from '@angular/forms';
 import { ModeratorModule } from './moderator/moderator.module';
 
 import { RegisteruserModule } from './registeruser/registeruser.module';
+import { ClientLoginComponent } from './client/client-login/client-login.component';
+import { ClientHomeComponent } from './client/client-home/client-home.component';
+import { DeviceComponent } from './client/device/device.component';
+import { ClientService } from 'src/service/client.service';
 
 
 
@@ -28,7 +32,10 @@ import { RegisteruserModule } from './registeruser/registeruser.module';
 */
 @NgModule({
   declarations: [
-    AppComponent   
+    AppComponent,
+    ClientLoginComponent,
+    ClientHomeComponent,
+    DeviceComponent,   
     
   ],
   imports: [
@@ -51,7 +58,7 @@ import { RegisteruserModule } from './registeruser/registeruser.module';
 
 
   ],
-  providers: [],
+  providers: [ClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { HttpParams, HttpClient } from '@angular/common/http';
 import { Client } from 'src/dto/client';
 import { AbstractService } from './abstractservice';
+import { Device } from 'src/dto/device';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,11 @@ export class ClientService {
   login(username: string, password: string): Observable<Client> {
     const params = new HttpParams().set('username', username).set('password', password);
     return this.http.post<Client>('http://localhost:8080/Client/loginClient', params)
+  }
+
+  readDevices(idclient :number): Observable <Array<Device>>{
+    
+    return this.http.get<Array<Device>>('http://localhost:8080/Client/deviceManagement?idclient='+idclient)
   }
 
 }

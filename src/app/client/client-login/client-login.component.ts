@@ -24,9 +24,11 @@ export class ClientLoginComponent implements OnInit {
         console.log('Risposta ricevuta');
         if (response != null) {
             this.client = response;
-            sessionStorage.setItem('user', JSON.stringify(this.client));
+            sessionStorage.setItem('client', JSON.stringify(this.client));
             console.log('Username: ' + this.client.username);
-            this.router.navigateByUrl("/homepage");
+            console.log('client id: ' + this.client.idclient);
+
+            this.router.navigateByUrl("/clientHome");
         }
     });
 }

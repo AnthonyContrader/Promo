@@ -2,7 +2,7 @@ import { UserDTO } from './userdto';
 
 export class Client{
 
-    idClient: number;
+    idclient: number;
 
     user: UserDTO ;
 
@@ -14,9 +14,9 @@ export class Client{
 	
     email: string;
     
-    constructor(idClient: number, user: UserDTO, username: string, password: string, scode: string, email: string){
+    constructor(idclient: number, user: UserDTO, username: string, password: string, scode: string, email: string){
 
-        this.idClient = idClient;
+        this.idclient = idclient;
         this.user = user;
         this.username = username;
         this.password = password;
