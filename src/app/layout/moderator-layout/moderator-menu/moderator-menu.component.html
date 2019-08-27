@@ -1,0 +1,44 @@
+<div class="sidenav">
+    <button class="menubtn">
+        <a [routerLink]="['/moderator-dashboard']"> <i class="fas fa-home" style="margin-right: 10px"> </i>
+            Dashboard </a>
+    </button>
+    <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#account"
+        (click)="accountcollapse()">
+        <i class="fas fa-user" style="margin-right: 15px"></i> Account
+    </button>
+    <div class="collapsebtn" id="account" *ngIf="isAccountCollapsed">
+        <button class="menubtn" style="padding-left: 40px">
+            <a [routerLink]="['/moderator-dashboard/work-in-progress']"> <i class="fas fa-user-edit"
+                    style="margin-right: 15px"></i>
+                Edit Profile</a>
+        </button>
+        <button class="menubtn" style="padding-left: 40px">
+            <a [routerLink]="['/moderator-dashboard/work-in-progress']"><i class="fas fa-file-alt"
+                    style="margin-right: 15px"></i>General Info</a>
+        </button>
+    </div>
+    <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#clients"
+        (click)="clientscollapse()">
+        <i class="fas fa fa-plus-square" style="margin-right: 15px"></i>Clients
+    </button>
+    <div class="collapsebtn" id="clients" *ngIf="isClientCollapsed">
+        <button class="menubtn" style="padding-left: 40px;">
+            <a [routerLink]="['/moderator-dashboard/clients']"> <i class="fas fa-edit" style="margin-right: 10px">
+                </i> Manage Clients </a>
+        </button>
+    </div>
+    <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#devices"
+        (click)="devicescollapse()">
+        <i class="fas fa fa-podcast" style="margin-right: 15px"></i>Devices
+    </button>
+    <div class="collapsebtn" id="devices" *ngIf="isDeviceCollapsed">
+        <button class="menubtn" style="padding-left: 40px;">
+            <a [routerLink]="['/doctor-dashboard/deviceDs']"> <i class="fas fa-edit" style="margin-right: 10px">
+                </i> Manage Devices </a>
+        </button>
+    </div>
+    <button class="menubtn" (click)="logout()">
+        <i class="fas fa-sign-out-alt" style="margin-right: 15px"></i>Logout
+    </button>
+</div>
