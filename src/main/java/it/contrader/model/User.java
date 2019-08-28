@@ -28,7 +28,8 @@ public class User {
 	
 	public enum Usertype {
 		ADMIN,
-		MODERATOR
+		MODERATOR,
+		CLIENT
 	}
 
 	@Id

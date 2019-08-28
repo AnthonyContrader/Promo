@@ -5,7 +5,9 @@ import org.springframework.stereotype.Service;
 
 import it.contrader.converter.ClientConverter;
 import it.contrader.dao.ClientRepository;
+import it.contrader.dao.UserRepository;
 import it.contrader.dto.ClientDTO;
+import it.contrader.dto.UserDTO;
 import it.contrader.model.Client;
 
 /**
@@ -32,6 +34,11 @@ public class ClientService extends AbstractService<Client,ClientDTO> {
 	public Iterable<ClientDTO> getTutto () {
 		return xkcd.toDTOList(asd.findAll());
 		
+	}
+	
+	//LOGIN method
+	public ClientDTO findByUsernameAndPassword(String username, String password) {
+		return converter.toDTO(((ClientRepository)repository).findByUsernameAndPassword(username, password));
 	}
 
 }

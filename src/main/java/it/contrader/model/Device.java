@@ -1,11 +1,6 @@
 package it.contrader.model;
 
-import javax.persistence.Entity;
-
 import javax.persistence.*;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -31,27 +26,14 @@ public class Device {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@Column
+	@ManyToOne
+	private Client client;
+	
+	private String mac;
+	
 	private String devtype;
 	
-	private String descr;
-	
-	private int mp;
-	
-	private int mpr;
-	
-	private int mc;
-	
-	private int mci;
-	
-	private int mb;
-	
-	private int mbr;
-	
-	private float mt;
-	
-	private float mte;
-	
+	private String position;
 	
 }
 

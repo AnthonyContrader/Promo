@@ -1,7 +1,9 @@
 package it.contrader.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import it.contrader.converter.DeviceConverter;
 import it.contrader.dao.DeviceRepository;
 import it.contrader.dto.DeviceDTO;
 import it.contrader.model.Device;
@@ -19,10 +21,18 @@ import it.contrader.model.Device;
 public class DeviceService extends AbstractService<Device,DeviceDTO> {
 	
 	//ALL crud methods in AbstractService
+	@Autowired
+	DeviceRepository asd ;
+	@Autowired
+	DeviceConverter xkcd;
 	
 	//LOGIN method
 	public DeviceDTO findById(int id) {
 		return converter.toDTO(((DeviceRepository)repository).findById(id));
+	}
+	public Iterable<DeviceDTO> getTutto () {
+		return xkcd.toDTOList(asd.findAll());
+		
 	}
 
 }

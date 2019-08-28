@@ -28,5 +28,5 @@ public interface ClientRepository extends CrudRepository<Client, Long>{
 	
 	List<Client> findAllByUser(User user);
 	
-	
+	Client findByUsernameAndPassword(String username, String password);
 }
