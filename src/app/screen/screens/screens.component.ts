@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ScreenService } from 'src/service/screen.service';
 import { ScreenDTO } from 'src/dto/screendto';
 import { UserDTO } from 'src/dto/userdto';
+import { UserService } from 'src/service/user.service';
 
 @Component({
   selector: 'app-screens',
@@ -13,13 +14,17 @@ export class ScreensComponent implements OnInit {
 
   screens: ScreenDTO[];
   screentoinsert: ScreenDTO = new ScreenDTO();
+  users: UserDTO[];
+ user: UserDTO = new UserDTO;
 
-  constructor(private service: ScreenService) { }
+  constructor(private service: ScreenService, private userService: UserService) { }
 
   ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('currentUser'));
     this.getScreens();
     this.screentoinsert = new ScreenDTO();
     this.screentoinsert.userDTO = new UserDTO();
+    this.screentoinsert.userDTO=this.user;
   }
 
   getScreens() {

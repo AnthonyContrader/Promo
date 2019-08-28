@@ -34,10 +34,14 @@
             <table class="table">
               <thead></thead>
               <tbody>
-                  <tr>
+                  <!-- Id Moderator visibilità NASCOSTA -->
+                  <tr style="display: none;">
                       <th scope="row">Client</th>
-                      <td><input type="text" placeholder="Client" [(ngModel)]="devicetoinsert.clientDTO.id"></td>
+                      <td>
+                        <input type="text" [value]="devicetoinsert.clientDTO.id" [name]="devicetoinsert.clientDTO.id" [(ngModel)]="devicetoinsert.clientDTO.id" readonly>
+                      </td>
                   </tr>
+                  <!-- fine Visibilità nascosta -->
                   <tr>
                       <th scope="row">Mac</th>
                       <td><input type="text" placeholder="mac" [(ngModel)]="devicetoinsert.mac"></td>

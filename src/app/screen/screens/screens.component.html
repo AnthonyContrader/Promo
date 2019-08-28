@@ -1,51 +1,3 @@
-<!--
-
-  <div class="container">
-  <div class="row mt-5">
-    <div class="col-md-1">
-
-    </div>
-    <div class="coll_1">
-      <table>
-        <tr>
-          <th>
-           Id
-          </th>
-          <th>
-            Output
-          </th>
-          <th>
-            Position
-          </th>
-          
-        </tr>
-        <tr *ngFor="let screen of screens">
-          <td>
-            <input [(ngModel)]="screen.id">
-          </td>
-          <td>
-            <input [(ngModel)]="screen.output">
-          </td>
-          <td>
-            <input [(ngModel)]="screen.position">
-          </td>
-          
-          <td>
-            <button (click)=update(screen)>Update</button>
-          </td>
-        </tr>
-      </table>
-    </div>
-    <div class="col-md-1">
-
-    </div>
-  </div>
-</div>
-
-
-
--->
-
 <div class="py-4">
   <div class="d-flex">
       <div class="hamburger-round mr-1 mb-1"></div>
@@ -82,10 +34,14 @@
             <table class="table">
               <thead></thead>
               <tbody>
-                  <tr>
+                  <!-- Id Moderator visibilità NASCOSTA -->
+                  <tr style="display: none;">
                       <th scope="row">Moderator</th>
-                      <td><input type="text" placeholder="Moderator" [(ngModel)]="screentoinsert.userDTO.id"></td>
+                      <td>
+                        <input type="text" [value]="screentoinsert.userDTO.id" [name]="screentoinsert.userDTO.id" [(ngModel)]="screentoinsert.userDTO.id" readonly>
+                      </td>
                   </tr>
+                  <!-- fine Visibilità nascosta -->
                
                 <tr>
                     <th scope="row">Output</th>
