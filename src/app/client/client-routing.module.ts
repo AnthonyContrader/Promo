@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DeviceLayoutComponent } from '../layout/device-layout/device-layout.component';
-import { DeviceDashboardComponent } from './device-dashboard/device-dashboard.component';
-import { UsersComponent } from './users/users.component';
+import { ClientLayoutComponent } from '../layout/client-layout/client-layout.component';
+import { ClientDashboardComponent } from './client-dashboard/client-dashboard.component';
 import { DevicesComponent } from './devices/devices.component';
 import { WorkInProgressComponent } from './work-in-progress/work-in-progress.component';
+import { ClientsComponent } from '../moderator/clients/clients.component';
 
 /**
  * Modulo di routing dell'admin. Qui ci sono i percorsi che un admin può seguire:
@@ -19,10 +19,10 @@ import { WorkInProgressComponent } from './work-in-progress/work-in-progress.com
  * @see layout
  */
 const routes: Routes = [
-  { path: 'device-dashboard', component: DeviceLayoutComponent, children:[
-    { path: '', component: DeviceDashboardComponent},
-    { path: 'users', component: UsersComponent},
+  { path: 'client-dashboard', component: ClientLayoutComponent, children:[
+    { path: '', component: ClientDashboardComponent},
     { path: 'devices', component: DevicesComponent},
+    { path: 'clients', component: ClientsComponent},
     { path: 'work-in-progress', component: WorkInProgressComponent}
   ]}
 ];
@@ -31,4 +31,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class DeviceRoutingModule { }
+export class ClientRoutingModule { }

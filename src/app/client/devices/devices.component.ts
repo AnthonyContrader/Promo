@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DeviceService } from 'src/service/device.service';
 import { DeviceDTO } from 'src/dto/devicedto';
+import { ClientDTO } from 'src/dto/clientdto';
 
 @Component({
   selector: 'app-devices',
@@ -10,16 +11,21 @@ import { DeviceDTO } from 'src/dto/devicedto';
 export class DevicesComponent implements OnInit {
 
   devices: DeviceDTO[];
- devicetoinsert: DeviceDTO = new DeviceDTO();
+  devicetoinsert: DeviceDTO = new DeviceDTO();
 
   constructor(private service: DeviceService) { }
 
   ngOnInit() {
     this.getDevices();
+    this.devicetoinsert = new DeviceDTO();
+    this.devicetoinsert.clientDTO = new ClientDTO();
   }
 
   getDevices() {
-    this.service.getAll().subscribe(devices => this.devices = devices);
+    this.service.getAll().subscribe(data => {
+      console.log(data);
+      this.devices = data;
+    });
   }
 
   delete(device: DeviceDTO) {
@@ -31,7 +37,9 @@ export class DevicesComponent implements OnInit {
   }
 
   insert(device: DeviceDTO) {
+    console.log(device);
     this.service.insert(device).subscribe(() => this.getDevices());
+    console.log();
   }
 
   clear(){

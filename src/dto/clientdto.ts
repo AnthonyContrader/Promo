@@ -17,5 +17,6 @@ export class ClientDTO {
 	password: string;
 
 	email: string;
+
     
 }

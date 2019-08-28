@@ -36,7 +36,7 @@ export class AreariservataComponent implements OnInit {
             break;
           }
           default:
-            this.router.navigate(['/login']);
+            this.router.navigate(['/homepage']);
         }
       }
     });

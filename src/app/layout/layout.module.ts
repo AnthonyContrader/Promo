@@ -4,8 +4,8 @@ import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
 import { AdminMenuComponent } from './admin-layout/admin-menu/admin-menu.component';
 import { ModeratorLayoutComponent } from './moderator-layout/moderator-layout.component';
 import { ModeratorMenuComponent } from './moderator-layout/moderator-menu/moderator-menu.component';
-import { DeviceLayoutComponent } from './device-layout/device-layout.component';
-import { DeviceMenuComponent } from './device-layout/device-menu/device-menu.component';
+import { ClientLayoutComponent } from './client-layout/client-layout.component';
+import { ClientMenuComponent } from './client-layout/client-menu/client-menu.component';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 
@@ -19,7 +19,7 @@ import { RouterModule } from '@angular/router';
  * @see AdminLayoutComponent
  */
 @NgModule({
-  declarations: [AdminLayoutComponent, AdminMenuComponent, ModeratorLayoutComponent, ModeratorMenuComponent, DeviceLayoutComponent, DeviceMenuComponent, HeaderComponent],
+  declarations: [AdminLayoutComponent, AdminMenuComponent, ModeratorLayoutComponent, ModeratorMenuComponent, ClientLayoutComponent, ClientMenuComponent, HeaderComponent],
   imports: [
     CommonModule,
     RouterModule

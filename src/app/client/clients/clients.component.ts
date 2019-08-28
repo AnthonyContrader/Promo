@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from 'src/service/client.service';
 import { ClientDTO } from 'src/dto/clientdto';
-import { UserDTO } from 'src/dto/userdto';
 
 @Component({
   selector: 'app-clients',
@@ -17,15 +16,10 @@ export class ClientsComponent implements OnInit {
 
   ngOnInit() {
     this.getClients();
-    this.clienttoinsert = new ClientDTO();
-    this.clienttoinsert.userDTO = new UserDTO();
   }
 
   getClients() {
-    this.service.getAll().subscribe(data => {
-      console.log(data);
-      this.clients = data;
-    });
+    this.service.getAll().subscribe(clients => this.clients = clients);
   }
 
   delete(client: ClientDTO) {
@@ -37,9 +31,7 @@ export class ClientsComponent implements OnInit {
   }
 
   insert(client: ClientDTO) {
-    console.log(client);
     this.service.insert(client).subscribe(() => this.getClients());
-    console.log();
   }
 
   clear(){

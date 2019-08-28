@@ -7,9 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from './layout/layout.module';
 import { AdminModule } from './admin/admin.module';
 import { ModeratorModule } from './moderator/moderator.module';
-import { DeviceModule } from './device/device.module';
+import { ClientModule } from './client/client.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { AreariservataModule } from './areariservata/areariservata.module';
+import { ClientLoginModule } from './client/client-login/client-login.module';
 
 
 /** 
@@ -31,9 +32,10 @@ import { AreariservataModule } from './areariservata/areariservata.module';
     LayoutModule,
     AdminModule,
     ModeratorModule,
-    DeviceModule,
+    ClientModule,
     HomepageModule,
-    AreariservataModule
+    AreariservataModule,
+    ClientLoginModule
     
   ],
   providers: [],

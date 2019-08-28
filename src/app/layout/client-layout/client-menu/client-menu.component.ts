@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-device-menu',
-  templateUrl: './device-menu.component.html',
-  styleUrls: ['./device-menu.component.css']
+  selector: 'app-client-menu',
+  templateUrl: './client-menu.component.html',
+  styleUrls: ['./client-menu.component.css']
 })
-export class DeviceMenuComponent implements OnInit {
+export class ClientMenuComponent implements OnInit {
 
   isUserCollapsed = false;
   isAccountCollapsed = false;
