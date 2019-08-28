@@ -1,0 +1,234 @@
+<!--
+
+  <div class="container">
+  <div class="row mt-5">
+    <div class="col-md-1">
+
+    </div>
+    <div class="coll_1">
+      <table>
+        <tr>
+          <th>
+           Id
+          </th>
+          <th>
+            Output
+          </th>
+          <th>
+            Position
+          </th>
+          
+        </tr>
+        <tr *ngFor="let screen of screens">
+          <td>
+            <input [(ngModel)]="screen.id">
+          </td>
+          <td>
+            <input [(ngModel)]="screen.output">
+          </td>
+          <td>
+            <input [(ngModel)]="screen.position">
+          </td>
+          
+          <td>
+            <button (click)=update(screen)>Update</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+  </div>
+</div>
+
+
+
+-->
+
+<div class="py-4">
+  <div class="d-flex">
+      <div class="hamburger-round mr-1 mb-1"></div>
+      <div class="hamburger-round mr-1 mb-1"></div>
+      <div class="hamburger-round mr-1 mb-1"></div>
+    </div>
+  <div class="d-flex">
+  <div class="hamburger-round mr-1 mb-1"></div>
+      <div class="hamburger-round mr-1 mb-1"></div>
+      <div class="hamburger-round mr-1 mb-1"></div>
+  </div>
+  <div class="d-flex">
+  <div class="hamburger-round mr-1 mb-1"></div>
+      <div class="hamburger-round mr-1 mb-1"></div>
+      <div class="hamburger-round mr-1 mb-1"></div>
+  </div>
+
+  <div class="d-flex justify-content-end">
+      <button type="button" class="btn mr-3" data-toggle="modal" data-target="#modal-insert">
+          <i class="fas fa-plus fa-2x"></i>
+      </button>
+  </div>
+  <!-- Modal Insert -->
+  <div class="modal fade" id="modal-insert" tabindex="-1" role="dialog" aria-labelledby="ModalInsertLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ModalInsertLabel">Inserisci Nuovo <span class="font-weight-bold text-uppercase">Screen</span></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <table class="table">
+              <thead></thead>
+              <tbody>
+                  <tr>
+                      <th scope="row">Moderator</th>
+                      <td><input type="text" placeholder="Moderator" [(ngModel)]="screentoinsert.userDTO.id"></td>
+                  </tr>
+               
+                <tr>
+                    <th scope="row">Output</th>
+                    <td><input type="text" placeholder="output" [(ngModel)]="screentoinsert.output"></td>
+                </tr>
+                <tr>
+                    <th scope="row">Position</th>
+                    <td><input type="text" placeholder="position" [(ngModel)]="screentoinsert.position"></td>
+                </tr>
+            
+                
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="clear()">Annulla</button>
+            <button type="button" class="btn btn-success" data-dismiss="modal" (click)="insert(screentoinsert)">Inserisci</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="table-responsive">
+    <table class="table table-striped mt-5">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Output</th>
+          <th scope="col">Position</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let screen of screens">
+          <td>
+
+            {{ screen.id }}
+
+          </td>
+          <td>
+            {{ screen.output }}
+          </td>
+          <td>
+            {{ screen.position }}
+          </td>
+          <td>
+
+            
+            <button type="button" class="btn" data-toggle="modal" attr.data-target="#modal-read-{{ screen.id }}" (click)="read(screen)">
+              <i class="fas fa-eye text-secondary"></i>
+            </button>
+
+          </td>
+          <td>
+            <button type="button" class="btn" data-toggle="modal" attr.data-target="#modal-update-{{ screen.id }}" (click)="read(screen)">
+              <i class="fas fa-edit"></i>
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn" (click)="delete(screen)">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+          </td>
+
+          <!-- Modal Read -->
+          <div class="modal fade" id="modal-read-{{ screen.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Riepilogo <span class="font-weight-bold text-uppercase">{{ screen.id }}</span></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <table class="table">
+                    <thead></thead>
+                    <tbody>
+                      <tr>
+                          <th scope="row">Id</th>
+                          <td>{{ screen.id }}</td>
+                      </tr>
+                      <tr>
+                          <th scope="row">Output</th>
+                          <td>{{ screen.output }}</td>
+                      </tr>
+                      <tr>
+                          <th scope="row">Position</th>
+                          <td>{{ screen.position }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal Update -->
+          <div class="modal fade" id="modal-update-{{ screen.id }}" tabindex="-1" role="dialog" aria-labelledby="ModalUpdateLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="ModalUpdateLabel">Modifica <span class="font-weight-bold text-uppercase">{{ screen.id }}</span></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <table class="table">
+                      <thead></thead>
+                      <tbody>
+                        <tr>
+                            <th scope="row">Id</th>
+                            <td><input [(ngModel)]="screen.id"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Output</th>
+                            <td><input [(ngModel)]="screen.output"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Position</th>
+                            <td><input [(ngModel)]="screen.position "></td>
+                        </tr>
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal" (click)=update(screen)>Modifica</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </tr>
+      </tbody>
+    </table>
+  </div> 
+</div>
+

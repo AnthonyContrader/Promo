@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ModeratorLayoutComponent } from '../layout/moderator-layout/moderator-layout.component';
-import { ModeratorDashboardComponent } from './moderator-dashboard/moderator-dashboard.component';
+import { ScreenLayoutComponent } from '../layout/screen-layout/screen-layout.component';
+import { ScreenDashboardComponent } from './screen-dashboard/screen-dashboard.component';
 import { UsersComponent } from './users/users.component';
-import { ClientsComponent } from './clients/clients.component';
-import { DeviceDsComponent } from './deviceDs/deviceDs.component';
+import { ScreensComponent } from './screens/screens.component';
 import { WorkInProgressComponent } from './work-in-progress/work-in-progress.component';
-import { ScreensComponent } from '../screen/screens/screens.component';
 
 /**
  * Modulo di routing dell'admin. Qui ci sono i percorsi che un admin può seguire:
@@ -16,16 +14,14 @@ import { ScreensComponent } from '../screen/screens/screens.component';
  * 
  * @author Vittorio Valent
  * 
- * @see DoctorLayoutComponent
+ * @see ScreenLayoutComponent
  * 
  * @see layout
  */
 const routes: Routes = [
-  { path: 'moderator-dashboard', component: ModeratorLayoutComponent, children:[
-    { path: '', component: ModeratorDashboardComponent},
+  { path: 'screen-dashboard', component: ScreenLayoutComponent, children:[
+    { path: '', component: ScreenDashboardComponent},
     { path: 'users', component: UsersComponent},
-    { path: 'clients', component: ClientsComponent},
-    { path: 'deviceDs', component: DeviceDsComponent},
     { path: 'screens', component: ScreensComponent},
     { path: 'work-in-progress', component: WorkInProgressComponent}
   ]}
@@ -35,4 +31,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ModeratorRoutingModule { }
+export class ScreenRoutingModule { }

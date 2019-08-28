@@ -8,6 +8,8 @@ import { ClientLayoutComponent } from './client-layout/client-layout.component';
 import { ClientMenuComponent } from './client-layout/client-menu/client-menu.component';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
+import { ScreenLayoutComponent } from './screen-layout/screen-layout.component';
+import { ScreenMenuComponent } from './screen-layout/screen-menu/screen-menu.component';
 
 /**
  * Modulo di layout. Viene caricato nel rputer outlet padre e poi 
@@ -19,7 +21,7 @@ import { RouterModule } from '@angular/router';
  * @see AdminLayoutComponent
  */
 @NgModule({
-  declarations: [AdminLayoutComponent, AdminMenuComponent, ModeratorLayoutComponent, ModeratorMenuComponent, ClientLayoutComponent, ClientMenuComponent, HeaderComponent],
+  declarations: [AdminLayoutComponent, AdminMenuComponent, ModeratorLayoutComponent, ModeratorMenuComponent, ClientLayoutComponent, ClientMenuComponent, HeaderComponent, ScreenLayoutComponent, ScreenMenuComponent],
   imports: [
     CommonModule,
     RouterModule

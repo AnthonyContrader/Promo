@@ -28,14 +28,14 @@
                 </i> Manage Clients </a>
         </button>
     </div>
-    <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#devices"
-        (click)="devicescollapse()">
-        <i class="fas fa fa-podcast" style="margin-right: 15px"></i>Devices
+    <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#screens"
+        (click)="screenscollapse()">
+        <i class="fas fa fa-podcast" style="margin-right: 15px"></i>Screens
     </button>
-    <div class="collapsebtn" id="devices" *ngIf="isDeviceCollapsed">
+    <div class="collapsebtn" id="screens" *ngIf="isScreenCollapsed">
         <button class="menubtn" style="padding-left: 40px;">
-            <a [routerLink]="['/doctor-dashboard/deviceDs']"> <i class="fas fa-edit" style="margin-right: 10px">
-                </i> Manage Devices </a>
+            <a [routerLink]="['/moderator-dashboard/screens']"> <i class="fas fa-edit" style="margin-right: 10px">
+                </i> Manage Screen </a>
         </button>
     </div>
     <button class="menubtn" (click)="logout()">

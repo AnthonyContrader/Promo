@@ -2,16 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-moderator-menu',
-  templateUrl: './moderator-menu.component.html',
-  styleUrls: ['./moderator-menu.component.css']
+  selector: 'app-screen-menu',
+  templateUrl: './screen-menu.component.html',
+  styleUrls: ['./screen-menu.component.css']
 })
-export class ModeratorMenuComponent implements OnInit {
+export class ScreenMenuComponent implements OnInit {
 
+  isUserCollapsed = false;
   isAccountCollapsed = false;
-  isClientCollapsed = false;
   isScreenCollapsed = false;
   
+
   constructor(private router: Router) {
   }
 
@@ -23,10 +24,10 @@ export class ModeratorMenuComponent implements OnInit {
     this.router.navigateByUrl('');
   }
 
-  clientscollapse() {
-    if (this.isClientCollapsed === false) {
-      this.isClientCollapsed = true;
-    } else { this.isClientCollapsed = false; }
+  userscollapse() {
+    if (this.isUserCollapsed === false) {
+      this.isUserCollapsed = true;
+    } else { this.isUserCollapsed = false; }
   }
 
   screenscollapse() {

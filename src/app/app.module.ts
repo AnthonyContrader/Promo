@@ -11,6 +11,7 @@ import { ClientModule } from './client/client.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { AreariservataModule } from './areariservata/areariservata.module';
 import { ClientLoginModule } from './client/client-login/client-login.module';
+import { ScreenModule } from './screen/screen.module';
 
 
 /** 
@@ -33,9 +34,11 @@ import { ClientLoginModule } from './client/client-login/client-login.module';
     AdminModule,
     ModeratorModule,
     ClientModule,
+    ScreenModule,
     HomepageModule,
     AreariservataModule,
-    ClientLoginModule
+    ClientLoginModule,
+    
     
   ],
   providers: [],
