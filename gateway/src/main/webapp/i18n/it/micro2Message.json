@@ -1,0 +1,26 @@
+
+{
+    "gatewayApp": {
+        "micro2Message" : {
+            "home": {
+                "title": "Messages",
+                "createLabel": "Genera un nuovo Message",
+                "createOrEditLabel": "Genera o modifica un Message"
+            },
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Message {{ id }}?"
+            },
+            "detail": {
+                "title": "Message"
+            },
+            "text": "Text"
+        }
+    },
+    "micro2App": {
+        "micro2Message" : {
+            "created": "&Egrave; stato generato un nuovo Message con identificatore { param }}",
+            "updated": "&Egrave; stato aggiornato Message identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Message con identificatore {{ param }}"
+        }
+    }
+}

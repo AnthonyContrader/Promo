@@ -1,0 +1,27 @@
+
+{
+    "gatewayApp": {
+        "micro1Screen" : {
+            "home": {
+                "title": "Screens",
+                "createLabel": "建立一筆新的 Screen",
+                "createOrEditLabel": "建立或編輯 Screen"
+            },
+            "delete": {
+                "question": "您確定要刪除 Screen {{ id }} 嗎?"
+            },
+            "detail": {
+                "title": "Screen"
+            },
+            "output": "Output",
+            "position": "Position"
+        }
+    },
+    "micro1App": {
+        "micro1Screen" : {
+            "created": "新的 Screen 建立成功，識別碼為 {{ param }}",
+            "updated": "識別碼為 {{ param }} 的 Screen 更新成功",
+            "deleted": "識別碼為 {{ param }} 的 Screen 刪除成功"
+        }
+    }
+}

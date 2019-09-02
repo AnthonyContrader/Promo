@@ -7,6 +7,11 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entità",
+                "micro1Client": "Client",
+                "micro1Device": "Device",
+                "micro1Screen": "Screen",
+                "micro2Shop": "Shop",
+                "micro2Message": "Message",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

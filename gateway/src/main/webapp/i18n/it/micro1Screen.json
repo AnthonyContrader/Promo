@@ -1,0 +1,27 @@
+
+{
+    "gatewayApp": {
+        "micro1Screen" : {
+            "home": {
+                "title": "Screens",
+                "createLabel": "Genera un nuovo Screen",
+                "createOrEditLabel": "Genera o modifica un Screen"
+            },
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Screen {{ id }}?"
+            },
+            "detail": {
+                "title": "Screen"
+            },
+            "output": "Output",
+            "position": "Position"
+        }
+    },
+    "micro1App": {
+        "micro1Screen" : {
+            "created": "&Egrave; stato generato un nuovo Screen con identificatore { param }}",
+            "updated": "&Egrave; stato aggiornato Screen identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Screen con identificatore {{ param }}"
+        }
+    }
+}

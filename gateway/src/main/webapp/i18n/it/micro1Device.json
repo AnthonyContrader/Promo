@@ -1,0 +1,29 @@
+
+{
+    "gatewayApp": {
+        "micro1Device" : {
+            "home": {
+                "title": "Devices",
+                "createLabel": "Genera un nuovo Device",
+                "createOrEditLabel": "Genera o modifica un Device"
+            },
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Device {{ id }}?"
+            },
+            "detail": {
+                "title": "Device"
+            },
+            "mac": "Mac",
+            "devtype": "Devtype",
+            "position": "Position",
+            "client": "Client"
+        }
+    },
+    "micro1App": {
+        "micro1Device" : {
+            "created": "&Egrave; stato generato un nuovo Device con identificatore { param }}",
+            "updated": "&Egrave; stato aggiornato Device identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Device con identificatore {{ param }}"
+        }
+    }
+}

@@ -1,0 +1,28 @@
+
+{
+    "gatewayApp": {
+        "micro1Client" : {
+            "home": {
+                "title": "Clients",
+                "createLabel": "Maak een nieuwe Client",
+                "createOrEditLabel": "Maak of wijzig een Client"
+            },
+            "delete": {
+                "question": "Bent u zeker dat u Client {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Client"
+            },
+            "username": "Username",
+            "password": "Password",
+            "email": "Email"
+        }
+    },
+    "micro1App": {
+        "micro1Client" : {
+            "created": "A new Client is created with identifier {{ param }}",
+            "updated": "A Client is updated with identifier {{ param }}",
+            "deleted": "A Client is deleted with identifier {{ param }}"
+        }
+    }
+}

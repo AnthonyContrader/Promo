@@ -1,0 +1,28 @@
+
+{
+    "gatewayApp": {
+        "micro1Client" : {
+            "home": {
+                "title": "Clients",
+                "createLabel": "Genera un nuovo Client",
+                "createOrEditLabel": "Genera o modifica un Client"
+            },
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Client {{ id }}?"
+            },
+            "detail": {
+                "title": "Client"
+            },
+            "username": "Username",
+            "password": "Password",
+            "email": "Email"
+        }
+    },
+    "micro1App": {
+        "micro1Client" : {
+            "created": "&Egrave; stato generato un nuovo Client con identificatore { param }}",
+            "updated": "&Egrave; stato aggiornato Client identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Client con identificatore {{ param }}"
+        }
+    }
+}

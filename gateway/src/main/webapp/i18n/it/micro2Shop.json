@@ -1,0 +1,28 @@
+
+{
+    "gatewayApp": {
+        "micro2Shop" : {
+            "home": {
+                "title": "Shops",
+                "createLabel": "Genera un nuovo Shop",
+                "createOrEditLabel": "Genera o modifica un Shop"
+            },
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Shop {{ id }}?"
+            },
+            "detail": {
+                "title": "Shop"
+            },
+            "name": "Name",
+            "type": "Type",
+            "position": "Position"
+        }
+    },
+    "micro2App": {
+        "micro2Shop" : {
+            "created": "&Egrave; stato generato un nuovo Shop con identificatore { param }}",
+            "updated": "&Egrave; stato aggiornato Shop identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Shop con identificatore {{ param }}"
+        }
+    }
+}

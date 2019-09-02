@@ -1,0 +1,26 @@
+
+{
+    "gatewayApp": {
+        "micro2Message" : {
+            "home": {
+                "title": "Messages",
+                "createLabel": "Create a new Message",
+                "createOrEditLabel": "Create or edit a Message"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Message {{ id }}?"
+            },
+            "detail": {
+                "title": "Message"
+            },
+            "text": "Text"
+        }
+    },
+    "micro2App": {
+        "micro2Message" : {
+            "created": "A new Message is created with identifier {{ param }}",
+            "updated": "A Message is updated with identifier {{ param }}",
+            "deleted": "A Message is deleted with identifier {{ param }}"
+        }
+    }
+}

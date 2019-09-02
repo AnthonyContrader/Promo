@@ -1,0 +1,28 @@
+
+{
+    "gatewayApp": {
+        "micro1Client" : {
+            "home": {
+                "title": "Clients",
+                "createLabel": "建立一筆新的 Client",
+                "createOrEditLabel": "建立或編輯 Client"
+            },
+            "delete": {
+                "question": "您確定要刪除 Client {{ id }} 嗎?"
+            },
+            "detail": {
+                "title": "Client"
+            },
+            "username": "Username",
+            "password": "Password",
+            "email": "Email"
+        }
+    },
+    "micro1App": {
+        "micro1Client" : {
+            "created": "新的 Client 建立成功，識別碼為 {{ param }}",
+            "updated": "識別碼為 {{ param }} 的 Client 更新成功",
+            "deleted": "識別碼為 {{ param }} 的 Client 刪除成功"
+        }
+    }
+}

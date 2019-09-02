@@ -1,0 +1,28 @@
+
+{
+    "gatewayApp": {
+        "micro2Shop" : {
+            "home": {
+                "title": "Shops",
+                "createLabel": "建立一筆新的 Shop",
+                "createOrEditLabel": "建立或編輯 Shop"
+            },
+            "delete": {
+                "question": "您確定要刪除 Shop {{ id }} 嗎?"
+            },
+            "detail": {
+                "title": "Shop"
+            },
+            "name": "Name",
+            "type": "Type",
+            "position": "Position"
+        }
+    },
+    "micro2App": {
+        "micro2Shop" : {
+            "created": "新的 Shop 建立成功，識別碼為 {{ param }}",
+            "updated": "識別碼為 {{ param }} 的 Shop 更新成功",
+            "deleted": "識別碼為 {{ param }} 的 Shop 刪除成功"
+        }
+    }
+}
