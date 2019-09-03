@@ -1,4 +1,4 @@
 export enum Usertype {
-    ADMIN,
-    MODERATOR
+    ROLE_ADMIN,
+    ROLE_MODERATOR
 }
