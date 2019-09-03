@@ -1,0 +1,15 @@
+.hamburger-round {
+    width: 7px;
+    height: 7px;
+    background: #C1272D;
+    border-radius: 50%;
+}
+
+a:hover {
+	color: #999999;
+}
+
+input:hover,  input:active, input:focus{
+    border: 2px solid black;
+}
+
