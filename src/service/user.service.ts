@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { AbstractService } from './abstractservice';
+import { AbstractUService } from './abstractUservice';
 import { UserDTO } from 'src/dto/userdto';
 import { HttpClient } from '@angular/common/http';
 import { LoginDTO } from 'src/dto/logindto';
 import { Observable } from 'rxjs';
 import { AreariservataDTO } from 'src/dto/areariservatadto';
+
 
 /**
  * I service sono decorati da @Injectable. 
@@ -18,11 +19,11 @@ import { AreariservataDTO } from 'src/dto/areariservatadto';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService extends AbstractService<UserDTO>{
+export class UserService extends AbstractUService<UserDTO>{
 
   constructor(http: HttpClient) {
     super(http);
-    this.type = 'user';
+    this.type = 'users';
     this.port = '8080';
   }
   auth() {
@@ -33,14 +34,10 @@ export class UserService extends AbstractService<UserDTO>{
       return '';
     }
   }
-
   login(loginDTO: LoginDTO): Observable<UserDTO> {
     return this.http.post<any>('http://localhost:8080/api/authenticate', loginDTO)
   }
-
-  areariservata(areariservataDTO: AreariservataDTO): Observable<UserDTO> {
-    return this.http.post<any>('http://localhost:8080/api/authenticate', areariservataDTO)
-  }
+  
   userLogged(username: string) {
     // console.log('qua: ', this.auth());
      console.log(this.auth());
@@ -50,6 +47,13 @@ export class UserService extends AbstractService<UserDTO>{
        }
      });
    }
+
+  
+
+  areariservata(areariservataDTO: AreariservataDTO): Observable<UserDTO> {
+    return this.http.post<any>('http://localhost:8080/api/authenticate', areariservataDTO)
+  }
+  
  
  }
  

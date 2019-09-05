@@ -14,6 +14,8 @@ export interface Service<DTO> {
 
     delete(id: number): Observable<any>;
 
+    deleteU(login: string): Observable<DTO>;
+
     update(dto: DTO): Observable<any> ;
 
     insert(dto: DTO): Observable<any>;
